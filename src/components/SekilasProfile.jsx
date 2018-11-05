@@ -6,12 +6,12 @@ import { Container,
 class SekilasProfile extends Component {
   render() {
     return (
-      <div className="bgSekilasArdy">
+      <div className="bgSekilasArdy paddingSection">
         <Container>
           <Row style={{ position: 'relative' }}>
             <Col md="4" style={{ width: '100%' }}>
               <div style={{ width: '100%', height: '100%' }}>
-                <img style={{ position: 'absolute', width: '103%', top: '-58px', left: '-70px' }} src={'./images/ardy1.png'} alt="ardypng"/>
+                <img style={{ position: 'absolute', width: '103%', top: '-58px', left: '-10%' }} src={'./images/ardy1.png'} alt="ardypng"/>
               </div>
             </Col>
             <Col md="8">
