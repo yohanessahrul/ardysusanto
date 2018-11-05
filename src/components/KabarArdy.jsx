@@ -44,30 +44,31 @@ class KabarArdy extends Component {
     return (
       <div className="bgKabarArdy paddingSection">
         <Container >
-          <h2 style={{ textAlign: 'center' }}>Kabar Mas Ardy ?</h2>
+          <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>Kabar Mas Ardy ?</h2>
+          <p style={{ textAlign: 'center', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur obcaecati ipsum vero quo nam repudiandae deleniti laudantium. Incidunt, labore? Temporibus incidunt ratione doloremque rerum! Repellendus exercitationem corrupti illum qui.</p>
           <Slider {...settings}>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
-            <div>
+            <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/slide1.png'} alt="kabar"/>
             </div>
           </Slider>
