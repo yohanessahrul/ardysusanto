@@ -7,7 +7,7 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        {/* <div className="bgDevice"></div> */}
+        <div className="bgDevice"></div>
         <div className="headerMobile">
           <h3>Navbar Mobile</h3>
         </div>

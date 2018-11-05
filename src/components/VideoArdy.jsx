@@ -11,7 +11,9 @@ class VideoArdy extends Component {
         <Container>
           <Row>
             <Col>
-              <iframe style={{ display: 'table', margin: '0 auto', border: '5px solid #FAE773', boxShadow: '0px 0px 10px 3px black' }} width="660" height="415" src="https://www.youtube.com/embed/hlWiI4xVXKY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div className="iframeYutub">
+                <iframe style={{ display: 'table', margin: '0 auto', border: '5px solid #FAE773', boxShadow: '0px 0px 10px 3px black' }} width="100%" height="100%" src="https://www.youtube.com/embed/hlWiI4xVXKY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </Col>
           </Row>
         </Container>

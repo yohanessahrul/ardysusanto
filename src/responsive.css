@@ -14,6 +14,7 @@
   button.slick-arrow.slick-prev, button.slick-arrow.slick-next {
     top: 50%!important;
   }
+  .iframeYutub { width: 90%; height: 210px; }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -32,6 +33,7 @@
   button.slick-arrow.slick-prev, button.slick-arrow.slick-next {
     top: 100px!important;
   }
+  .iframeYutub { width: 90%; height: 270px; }
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -54,6 +56,7 @@
   .calonDapil { letter-spacing: 0.3px; }
   .slogan { display: table; font-size: 25px }
   .ardyKuat { height: 100px; margin-right: 0px; }
+  .iframeYutub { width: 70%; height: 280px; }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -76,6 +79,7 @@
   .calonDapil { letter-spacing: 3.6px; }
   .slogan { font-size: 30px; float: right; }
   .ardyKuat { height: 130px; }
+  .iframeYutub { width: 60%; height: 320px; }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -98,4 +102,5 @@
   .calonDapil { letter-spacing: 3.6px; }
   .slogan { font-size: 30px; float: right; }
   .ardyKuat { height: 130px; }
+  .iframeYutub { width: 60%; height: 375px; }
 }
