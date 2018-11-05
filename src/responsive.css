@@ -53,6 +53,7 @@
   .logoNameCaleg { font-size: 34px; }
   .calonDapil { letter-spacing: 0.3px; }
   .slogan { display: table; font-size: 25px }
+  .ardyKuat { height: 100px; margin-right: 0px; }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -74,6 +75,7 @@
   .logoNameCaleg { font-size: 45px; }
   .calonDapil { letter-spacing: 3.6px; }
   .slogan { font-size: 30px; float: right; }
+  .ardyKuat { height: 130px; }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -95,4 +97,5 @@
   .logoNameCaleg { font-size: 45px; }
   .calonDapil { letter-spacing: 3.6px; }
   .slogan { font-size: 30px; float: right; }
+  .ardyKuat { height: 130px; }
 }

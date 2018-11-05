@@ -35,10 +35,11 @@ class Navigation extends Component {
                     </div>
                   </Col>
                   <Col md="5" sm="4">
-                    <div style={{ width: '100%', height: '100px'}}>
-                      <p className="slogan">
+                    <div style={{ width: '100%', height: '100px' }}>
+                      {/* <p className="slogan">
                         Bersama membangun<br/>ekonomi kerakyatan
-                      </p>
+                      </p> */}
+                      <img className="ardyKuat" src={'./images/ardysusanto.png'}/>
                     </div>
                   </Col>
                 </Row>
