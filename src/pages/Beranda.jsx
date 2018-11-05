@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
 import Header from '../components/Header';
 import Slider from '../components/Slider';
+import SekilasProfile from '../components/SekilasProfile';
+import KabarArdy from '../components/KabarArdy';
 
 class HomePage extends Component {
   render() {
@@ -9,9 +10,8 @@ class HomePage extends Component {
       <div>
         <Header/>
         <Slider/>
-        <Container>
-          <h1>Beranda page !</h1>
-        </Container>
+        <SekilasProfile/>
+        <KabarArdy/>
       </div>
     );
   }

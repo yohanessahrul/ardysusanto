@@ -83,10 +83,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29a84d', end
 .sliderWrap {
   width: 100%;
   margin: 0 auto!important;
-  background: url('/images/darkdenim32.png') repeat;
-  padding-top: 17px;
-  padding-bottom: 15px;
   position: relative;
+  background: url('/images/darkdenim32.png') repeat;
+  padding-bottom: -20px!important;
 }
 .vignete {
   width: 100%;
@@ -99,41 +98,57 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29a84d', end
   background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.66) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a8000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.slides {
+
+.logoNameCaleg {
+  font-size: 45px;
   display: table;
-  -webkit-box-shadow: 0 0 10px 1px #000000;
-  box-shadow: 0 0 10px 1px #000000;
-  margin-bottom: -5px!important;
-}
-button.slick-arrow.slick-prev {
-  position: absolute;
-  left: 0px;
-  top: 250px;
-  z-index: 10!important;
-  background: black;
-  width: 40px;
-  height: 50px;
-  padding-left: 10px;
-  opacity: 0.5;
-}
-button.slick-arrow.slick-next {
-  position: absolute;
-  right: 0px;
-  top: 250px;
-  z-index: 10!important;
-  background: black;
-  width: 40px;
-  height: 50px;
-  padding-left: 10px;
-  opacity: 0.5;
-}
-.slick-dots {
-  /* position: absolute; */
-  bottom: 20px!important;
-  /* display: block;
-  width: 100%;
+  font-family: Volkhov;
+  font-weight: bold;
+  font-size: 45px;
   padding: 0;
   margin: 0;
-  list-style: none;
-  text-align: center; */
+  color: #ffe571;
+  margin-top: 20px;
+  position: relative;
+  text-shadow: 2px 2px 3px #011605;
+}
+
+.calonDapil {
+  display: table;
+  font-weight: bold;
+  color: white;
+  margin-top: -10px;
+  letter-spacing: 3.6px;
+  text-shadow: 2px 2px 5px #000000;
+}
+.slogan {
+  font-size: 30px;
+  font-family: La Belle Aurore;
+  line-height: 1.3em;
+  color: white;
+  margin-top: 35px;
+  float: right;
+  text-shadow: 2px 2px 3px #082900;
+}
+.bgSekilasArdy {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  /* background: #238D45; */
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#74b22c+0,238d45+52,1a6b39+100 */
+background: rgb(116,178,44); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(116,178,44,1) 0%, rgba(35,141,69,1) 52%, rgba(26,107,57,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(116,178,44,1) 0%,rgba(35,141,69,1) 52%,rgba(26,107,57,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(116,178,44,1) 0%,rgba(35,141,69,1) 52%,rgba(26,107,57,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#74b22c', endColorstr='#1a6b39',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+/* background: rgb(35,141,69);
+background: -moz-linear-gradient(top, rgba(35,141,69,1) 0%, rgba(26,107,57,1) 100%); 
+background: -webkit-linear-gradient(top, rgba(35,141,69,1) 0%,rgba(26,107,57,1) 100%);
+background: linear-gradient(to bottom, rgba(35,141,69,1) 0%,rgba(26,107,57,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', endColorstr='#1a6b39',GradientType=0 ); */
+  }
+.pArdy {
+  font-size: 20px;
+  color: white;
 }

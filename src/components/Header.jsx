@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import MenuDesktop from '../components/MenuDesktop';
+// import { table } from 'react-icons-kit/fa';
 
 class Navigation extends Component {
   render() {
@@ -17,10 +18,10 @@ class Navigation extends Component {
                 <Row>
                   <Col md="5" sm="4">
                     <div style={{ width: '100%', height: '100px' }}>
-                      <p style={{ display: 'table', fontFamily: 'Volkhov', fontWeight: 'bold', fontSize: '45px',  padding: 0, margin: 0, color: '#ffe571', marginTop: '20px', position: 'relative', textShadow: '2px 2px 3px #011605' }}>
+                      <p className="logoNameCaleg">
                         ARDYSUSANTO
                       </p>
-                      <p style={{ display: 'table', fontWeight: 'bold', color: 'white', marginTop: '-10px', letterSpacing: '3.6px', textShadow: '2px 2px 5px #000000' }}>
+                      <p className="calonDapil">
                         CALON DPR RI DAPIL BANTEN 3
                       </p>
                       <p style={{ display: 'table', color: 'white', marginTop: '-20px', fontSize: '12px', textShadow: '2px 2px 3px #000000' }}>
@@ -34,8 +35,10 @@ class Navigation extends Component {
                     </div>
                   </Col>
                   <Col md="5" sm="4">
-                    <div style={{ width: '100%', height: '100px', marginTop: '20px', }}>
-                      <p style={{ fontSize: '30px', fontFamily: 'La Belle Aurore', lineHeight: '1.3em', color: 'white', marginTop: '20px', float: 'right', marginRight: '60px', textShadow: '2px 2px 3px #082900' }}>Bersama membangun<br/>ekonomi kerakyatan</p>
+                    <div style={{ width: '100%', height: '100px'}}>
+                      <p className="slogan">
+                        Bersama membangun<br/>ekonomi kerakyatan
+                      </p>
                     </div>
                   </Col>
                 </Row>
