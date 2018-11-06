@@ -1,34 +1,15 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import MenuDesktop from '../components/MenuDesktop';
-import { times } from 'react-icons-kit/fa';
-// import { table } from 'react-icons-kit/fa';
+import MenuMobile from '../components/MenuMobile';
 
 class Navigation extends Component {
-  constructor (props){
-    super (props)
-    this.jalan = this.jalan.bind(this);
-  }
-  componentDidMount(){
-  }
-  jalan () {
-    console.log('Jalaaaaan')
-    if (window.devicePixelRatio === 1.5) {
-      alert("This is a high-density screen");
-    } else if (window.devicePixelRatio === 0.75) {
-      alert("This is a low-density screen");
-    } else if (window.devicePixelRatio === 2) {
-      alert("2");
-    }
-  }
   render() {
     return (
       <div>
-        <Button onClick={this.jalan}>Lookit</Button>
-        {/* {this.jalan} */}
         {/* <div className="bgDevice"></div> */}
         <div className="headerMobile">
-          <h3>Navbar Mobile</h3>
+          <MenuMobile/>
         </div>
         <div className="headerDesktop">
           <div style={{ width: '100%', background: 'red' }}>
@@ -58,7 +39,7 @@ class Navigation extends Component {
                       {/* <p className="slogan">
                         Bersama membangun<br/>ekonomi kerakyatan
                       </p> */}
-                      <img className="ardyKuat" src={'./images/ardysusanto.png'}/>
+                      <img className="ardyKuat" src={'./images/ardysusanto.png'} alt="img-arysusanto-bersama-membangun-ekonomi-kerakyatan"/>
                     </div>
                   </Col>
                 </Row>

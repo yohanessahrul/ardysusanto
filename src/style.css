@@ -39,7 +39,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29a84d', end
   padding: 10px 15px;
 }
 .menuDesktop > ul > li:hover > a {
-  background: #075621;
+  background: #349e45;
   color: white;
 }
 .sosmedMenu {
@@ -156,9 +156,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
 .bgVideo {
   background: url('/images/escheresque_ste.png') repeat;
 }
+.h3ArdySekilas {
+  text-align: center;
+  color: #e3ff5b;
+  font-family: arial;
+  font-weight: bold;
+}
 .pArdy {
   font-size: 20px;
   color: white;
+  text-align: center;
 }
 .ardyKuat {
   height: 130px;
@@ -171,4 +178,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
   width: 60%;
   height: 375px;
   margin: 0 auto;
+}
+
+.fotoDesktopSekilasArdy {
+  width: 100%;
+  height: 100%;
+}
+.imgFotoDesktopSekilasArdy {
+}
+.imgFotoMobileSekilasArdy {
+  width: 100%;
+  margin: 20px auto;
+}
+.btnSekilas {
+  display: table!important;
+  margin: 0 auto !important;
 }
