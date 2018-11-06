@@ -5,6 +5,12 @@
     height: 10px;
     background: gray;
   }
+  .bgKabarArdy {
+    background: url('/images/brickwall2.png') repeat;
+  }
+  .bgVideo {
+    background: url('/images/escheresque_ste.png') repeat;
+  }
   .headerMobile { display: block; }
   .headerDesktop { display: none; }
   .centerLogo {
@@ -23,6 +29,12 @@
     width: 100%;
     height: 10px;
     background: blue;
+  }
+  .bgKabarArdy {
+    background: url('/images/brickwall2.png') repeat;
+  }
+  .bgVideo {
+    background: url('/images/escheresque_ste.png') repeat;
   }
   .headerMobile { display: block; }
   .headerDesktop { display: none; }
