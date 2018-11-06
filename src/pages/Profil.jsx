@@ -9,6 +9,7 @@ class Profile extends Component {
         <Header/>
         <Container>
           <h1>Profile Page</h1>
+          
         </Container>
       </div>
     );
