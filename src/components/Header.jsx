@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import MenuDesktop from '../components/MenuDesktop';
+import { times } from 'react-icons-kit/fa';
 // import { table } from 'react-icons-kit/fa';
 
 class Navigation extends Component {
+  constructor (props){
+    super (props)
+    this.jalan = this.jalan.bind(this);
+  }
+  componentDidMount(){
+  }
+  jalan () {
+    console.log('Jalaaaaan')
+    if (window.devicePixelRatio === 1.5) {
+      alert("This is a high-density screen");
+    } else if (window.devicePixelRatio === 0.75) {
+      alert("This is a low-density screen");
+    } else if (window.devicePixelRatio === 2) {
+      alert("2");
+    }
+  }
   render() {
     return (
       <div>
+        <Button onClick={this.jalan}>Lookit</Button>
+        {/* {this.jalan} */}
         {/* <div className="bgDevice"></div> */}
         <div className="headerMobile">
           <h3>Navbar Mobile</h3>
