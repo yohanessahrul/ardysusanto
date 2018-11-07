@@ -1,0 +1,28 @@
+{
+  "berita": [
+    {
+      "id": "1",
+      "judul": "Kader Muda PKB Ini Siap Bersaing di Pilwako Tangerang",
+      "date": "Rabu, 12 Maret 2018",
+      "isi": "Kader Muda PKB Ini Siap Bersaing di Pilwako Tangerang lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure, sequi ex suscipit esse facilis laudantium nisi provident quasi consectetur, optio vitae rem dolorum numquam voluptate obcaecati quos at. Dolorum..."
+    },
+    {
+      "id": "2",
+      "judul": "Kader PKB Muda Siap Jadi Walikota Tangerang",
+      "date": "Kamis, 13 Maret 2018",
+      "isi": "Kader PKB Muda Siap Jadi Walikota Tangerang lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure, sequi ex suscipit esse facilis laudantium nisi provident quasi consectetur, optio vitae rem dolorum numquam voluptate obcaecati quos at. Dolorum..."
+    },
+    {
+      "id": "3",
+      "judul": "Didorong Jadi Walikota Tangerang, Ketum IPTI Mengaku Siap",
+      "date": "Jumat, 14 Maret 2018",
+      "isi": "Didorong Jadi Walikota Tangerang, Ketum IPTI Mengaku Siap lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure, sequi ex suscipit esse facilis laudantium nisi provident quasi consectetur, optio vitae rem dolorum numquam voluptate obcaecati quos at. Dolorum..."
+    },
+    {
+      "id": "4",
+      "judul": "PKB punya bibit unggul untuk menjadi Walikota Tangerang",
+      "date": "Jumat, 14 Maret 2018",
+      "isi": "PKB punya bibit unggul untuk menjadi Walikota Tangerang lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure, sequi ex suscipit esse facilis laudantium nisi provident quasi consectetur, optio vitae rem dolorum numquam voluptate obcaecati quos at. Dolorum..."
+    }
+  ]
+}

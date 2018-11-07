@@ -5,6 +5,7 @@ import Beranda from './pages/Beranda';
 import Profil from './pages/Profil';
 import Berita from './pages/Berita';
 import Media from './pages/Media';
+import DetailBerita from './pages/DetailBerita';
 
 class App extends Component {
   render() {
@@ -14,8 +15,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Beranda} />
             <Route exact path="/profil" component={Profil} />
-            <Route exact path="/berita" component={Berita} />
             <Route exact path="/media" component={Media} />
+            <Route exact path="/berita" component={Berita} />
+            <Route exact path="/berita/:judul" component={DetailBerita} />
           </Switch>
         </BrowserRouter>
       </div>

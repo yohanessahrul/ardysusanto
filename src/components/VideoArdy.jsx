@@ -5,10 +5,14 @@ class VideoArdy extends Component {
   render() {
     return (
       <div className="bgVideo paddingSection">
-        <h2 style={{ textAlign: 'center', color: 'white', fontWeight: 'bold' }}>Video Ardy Susanto</h2>
-        <p style={{ textAlign: 'center', color: '#a7a7a7', width: '70%', margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas perspiciatis asperiores et. Itaque adipisci fugiat nesciunt repellat dolorem consequatur blanditiis deserunt hic natus cum excepturi, debitis quas alias tenetur!</p>
-        <br/>
         <Container>
+          <Row>
+            <Col>
+              <h2 style={{ textAlign: 'center', color: 'white', fontWeight: 'bold' }}>Video Ardy Susanto</h2>
+              <p style={{ textAlign: 'center', color: '#a7a7a7', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas perspiciatis asperiores et. Itaque adipisci fugiat nesciunt repellat dolorem consequatur blanditiis deserunt hic natus cum excepturi, debitis quas alias tenetur!</p>
+              <br/>
+            </Col>
+          </Row>
           <Row>
             <Col>
               <div className="iframeYutub">

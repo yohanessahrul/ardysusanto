@@ -31,7 +31,7 @@ class Navigation extends Component {
                   </Col>
                   <Col md="2" sm="4">
                     <div style={{ width: '100%', height: '120px' }}>
-                      <img className="centerLogo" src={'./images/Logo_PKB_1.png'} alt="logo-pkb"/>
+                      <img className="centerLogo" src={'../images/Logo_PKB_1.png'} alt="logo-pkb"/>
                     </div>
                   </Col>
                   <Col md="5" sm="4">
@@ -39,7 +39,7 @@ class Navigation extends Component {
                       {/* <p className="slogan">
                         Bersama membangun<br/>ekonomi kerakyatan
                       </p> */}
-                      <img className="ardyKuat" src={'./images/ardysusanto.png'} alt="img-arysusanto-bersama-membangun-ekonomi-kerakyatan"/>
+                      <img className="ardyKuat" src={'../images/ardysusanto.png'} alt="img-arysusanto-bersama-membangun-ekonomi-kerakyatan"/>
                     </div>
                   </Col>
                 </Row>

@@ -26,10 +26,10 @@ class MenuDesktop extends Component {
                     <Link to="/profil">PROFIL</Link>
                   </li>
                   <li>
-                    <Link to="berita">BERITA</Link>
+                    <Link to="/berita">BERITA</Link>
                   </li>
                   <li>
-                    <Link to="media">MEDIA</Link>
+                    <Link to="/media">MEDIA</Link>
                   </li>
                   <div className="clear"></div>
                   <div className="sosmedMenu">
