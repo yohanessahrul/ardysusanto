@@ -13,7 +13,9 @@ class Profile extends Component {
         <Container>
         </Container>
         <ProfilArdy/>
+        {/* <img style={{ width: '100%', display: 'table', position: 'absolute', margin: '0 auto' }} src={'./images/shadow.png'}/> */}
         <PendidikanArdy/>
+        {/* <img style={{ width: '100%', display: 'table', position: 'absolute', margin: '0 auto' }} src={'./images/shadow.png'}/> */}
         <RekamJejakArdy/>
       </div>
     );

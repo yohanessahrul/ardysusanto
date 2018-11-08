@@ -12,6 +12,7 @@ class HomePage extends Component {
         <Header/>
         <Slider/>
         <SekilasProfile/>
+        <img style={{ width: '100%', display: 'table', position: 'absolute', margin: '0 auto' }} src={'./images/shadow.png'}/>
         <KabarArdy/>
         <VideoArdy/>
       </div>
