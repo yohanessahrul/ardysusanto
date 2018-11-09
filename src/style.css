@@ -182,7 +182,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
 
 .fotoDesktopSekilasArdy {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  /* background: yellow; */
 }
 .imgFotoDesktopSekilasArdy {
 }

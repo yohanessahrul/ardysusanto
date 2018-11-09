@@ -15,12 +15,12 @@ const items = [
     caption: 'Pertemuan partisipan Ardy Susanto'
   },
   {
-    src: './images/slide2.png',
+    src: './images/slide1.png',
     altText: 'Slide 2',
     caption: 'Pertemuan partisipan Ardy Susanto'
   },
   {
-    src: './images/slide3.png',
+    src: './images/slide1.png',
     altText: 'Slide 3',
     caption: 'Pertemuan partisipan Ardy Susanto'
   },
