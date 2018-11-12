@@ -13,10 +13,17 @@ class DetailBerita extends Component {
         <Header/>
         <Container>
           <Row>
-            <Col>
+            <Col md="8">
               <br/>
-              <h1>{data.judul}</h1>
-              <p>{data.isi}</p>
+              <h2>{data.judul}</h2>
+              <div style={{ width: '100%', height: '380px', background: 'gray', marginBottom: '30px', overflow: 'hidden' }}>
+                <img style={{ width: '100%' }} src={`/images/${data.img}`} alt={data.img}/>
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: data.isi }}>
+              </div>
+            </Col>
+            <Col md="4">
+              <img style={{ width: '100%', marginTop: '30px' }} src="/images/poster-ardy.jpeg" alt="poster-ardy"/>
             </Col>
           </Row>
         </Container>

@@ -205,7 +205,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
 }
 .rc-steps-vertical .rc-steps-item-content {
   background: #319967;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -213,10 +213,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
   background: #217c50;
 }
 .rc-steps-vertical .rc-steps-item-title {
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(255, 255, 255)!important;
 }
 .rc-steps-vertical .rc-steps-item-description {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(255, 255, 255)!important;
+
 }

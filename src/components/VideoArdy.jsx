@@ -9,7 +9,7 @@ class VideoArdy extends Component {
           <Row>
             <Col>
               <h2 style={{ textAlign: 'center', color: 'white', fontWeight: 'bold' }}>Video Ardy Susanto</h2>
-              <p style={{ textAlign: 'center', color: '#a7a7a7', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas perspiciatis asperiores et. Itaque adipisci fugiat nesciunt repellat dolorem consequatur blanditiis deserunt hic natus cum excepturi, debitis quas alias tenetur!</p>
+              <p style={{ textAlign: 'center', color: '#a7a7a7', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas perspiciatis asperiores et. Itaque adipisci fugiat nesciunt repellat dolorem consequatur blanditiis ..</p>
               <br/>
             </Col>
           </Row>

@@ -36,7 +36,7 @@ class ListBerita extends Component {
                       pathname: `/berita/${judulParameter(data.judul)}`,
                       state: { beritaterpilih: `${JSON.stringify(data)}` }
                     }}>
-                      <img style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={'./images/slide1.png'} alt="img"/>
+                      <img style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={`./images/${data.img}`} alt="img"/>
                     </Link>
                   </div>
                 </Col>
@@ -52,7 +52,7 @@ class ListBerita extends Component {
                   <div style={{ color: '#999999', fontSize: '14px', marginBottom: '15px' }}>
                     <Icon style={{ marginRight: '5px', marginTop: '-5px', color: '#999999' }} size={14} icon={clockO} />{data.date}
                   </div>
-                  <p style={{ fontFamily: 'Nunito Sans' }}>{data.isi}</p>
+                  <p style={{ fontFamily: 'Nunito Sans' }}>{ data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,200) + '..' }</p>
                 </Col>
               </Row>
             </Col>

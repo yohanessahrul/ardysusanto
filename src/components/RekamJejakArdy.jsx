@@ -36,24 +36,32 @@ class RekamJejakArdy extends Component {
                   // description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita at sapiente quod nostrum voluptas iusto exercitationem est odio reiciendis maiores.'} 
                 />
                 <Step
-                  title="Ketua Umum DPP IPTI (Ikatan Pemuda Tionghoa Indonesia)" onClick={() => this.haha(4)}
-                  // description={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ut voluptate, deserunt reiciendis provident tenetur?'} 
-                />
-                <Step
-                  title="Wakil Sekretaris Umum PSMTI Pusat (Paguyuban Sosial Marga Tionghoa Indonesia)" onClick={() => this.haha(5)}
-                  // description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quis dolores adipisci, exercitationem provident dolor.'} 
-                />
-                <Step
-                  title="Bendahara Umum PP Pemuda Katolik" onClick={() => this.haha(6)}
-                  // description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quis dolores adipisci, exercitationem provident dolor."
-                />
-                <Step
                   title="PLT Ketua Pemuda Katolik Banten" onClick={() => this.haha(7)}
-                  // description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita at sapiente quod nostrum voluptas iusto exercitationem est odio reiciendis maiores."
+                  // description={'Periode : -'}
                 />
                 <Step
                   title="Ketua Pemuda Marga Huang" onClick={() => this.haha(8)}
                   // description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt excepturi quidem vitae eos, hic minima odit rerum dolor quibusdam est."
+                />
+                <Step
+                  title="Bendahara Umum PP Pemuda Katolik" onClick={() => this.haha(6)}
+                  description={'Periode : 2012 - Sekarang.'}
+                />
+                <Step
+                  title="Sekjen Perhimpunan Perusahaan Penjualan Langsung Indonesia (P3LI)" onClick={() => this.haha(7)}
+                  description={'Periode : 2013 - Sekarang'}
+                />
+                <Step
+                  title="Wakil Sekretaris Umum PSMTI Pusat (Paguyuban Sosial Marga Tionghoa Indonesia)" onClick={() => this.haha(5)}
+                  description={'Periode : 2013 - Sekarang.'} 
+                />
+                <Step
+                  title="Ketua Umum DPP IPTI (Ikatan Pemuda Tionghoa Indonesia)" onClick={() => this.haha(4)}
+                  description={'Periode : 2014 - Sekarang.'}
+                />
+                <Step
+                  title="Kepala Bidang Hukum dan Penegakkan Peraturana Perundang-undangan Indonesia Bioler Turbine Association (IBTA)" onClick={() => this.haha(7)}
+                  description={'Periode : 2016 - Sekarang'}
                 />
               </Steps>
             </Col>
