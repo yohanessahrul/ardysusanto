@@ -33,7 +33,7 @@ class ListBerita extends Component {
                 <Col md="4">
                   <div style={{ position: 'relative', width: '100%', height: '200px', background: '#e3e3e3', overflow: 'hidden' }}>
                     <Link to={{
-                      pathname: `/berita/${judulParameter(data.judul)}`,
+                      pathname: `/berita/${data.id}/${judulParameter(data.judul)}`,
                       state: { beritaterpilih: `${JSON.stringify(data)}` }
                     }}>
                       <img style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={`./images/${data.img}`} alt="img"/>
@@ -41,14 +41,14 @@ class ListBerita extends Component {
                   </div>
                 </Col>
                 <Col md="8">
-                  <h2 style={{ fontFamily: 'Nanum Gothic', fontSize: '30px', fontWeight: 'bold', color: '#555555', lineHeight: '1.3em' }}>
+                  <h3 style={{  color: '#555555', lineHeight: '1.3em' }}>
                     <Link to={{
-                      pathname: `/berita/${judulParameter(data.judul)}`,
+                      pathname: `/berita/${data.id}/${judulParameter(data.judul)}`,
                       state: { beritaterpilih: `${JSON.stringify(data)}` }
                     }}>
                       {data.judul}
                     </Link>
-                  </h2>
+                  </h3>
                   <div style={{ color: '#999999', fontSize: '14px', marginBottom: '15px' }}>
                     <Icon style={{ marginRight: '5px', marginTop: '-5px', color: '#999999' }} size={14} icon={clockO} />{data.date}
                   </div>

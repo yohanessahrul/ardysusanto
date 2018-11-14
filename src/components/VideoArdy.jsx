@@ -9,14 +9,14 @@ class VideoArdy extends Component {
           <Row>
             <Col>
               <h2 style={{ textAlign: 'center', color: 'white', fontWeight: 'bold' }}>Video Ardy Susanto</h2>
-              <p style={{ textAlign: 'center', color: '#a7a7a7', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas perspiciatis asperiores et. Itaque adipisci fugiat nesciunt repellat dolorem consequatur blanditiis ..</p>
+              <p style={{ textAlign: 'center', color: '#a7a7a7', width: '80%', margin: '0 auto' }}>Saya beberapa kali terjun ke masyarakat, dalam usaha untuk mengadvokasi mereka dalam menghadapi beberapa masalah. Saya melihat banyak kebutuhan mereka yang sebenernya belum terpenuhi bahkan mereka ditindas. (Ardy Susanto) </p>
               <br/>
             </Col>
           </Row>
           <Row>
             <Col>
               <div className="iframeYutub">
-                <iframe title="video-ardy" style={{ display: 'table', margin: '0 auto', border: '5px solid #FAE773', boxShadow: '0px 0px 10px 3px black' }} width="100%" height="100%" src="https://www.youtube.com/embed/hlWiI4xVXKY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe title="video-ardy" style={{ display: 'table', margin: '0 auto', border: '5px solid #FAE773', boxShadow: '0px 0px 10px 3px black' }} width="100%" height="100%" src="https://www.youtube.com/embed/VprDBdscDP4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </Col>
           </Row>

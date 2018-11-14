@@ -17,7 +17,7 @@ class App extends Component {
             <Route exact path="/profil" component={Profil} />
             <Route exact path="/media" component={Media} />
             <Route exact path="/berita" component={Berita} />
-            <Route exact path="/berita/:judul" component={DetailBerita} />
+            <Route exact path="/berita/:id/:judul" component={DetailBerita} />
           </Switch>
         </BrowserRouter>
       </div>

@@ -45,7 +45,9 @@ class KabarArdy extends Component {
       <div className="bgKabarArdy paddingSection">
         <Container >
           <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>Kabar Mas Ardy ?</h2>
-          <p style={{ textAlign: 'center', width: '80%', margin: '0 auto' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur obcaecati ipsum vero quo nam repudiandae deleniti laudantium. Incidunt, labore? Temporibus incidunt ratione..</p>
+          <p style={{ textAlign: 'center', width: '80%', margin: '0 auto' }}>
+            Mas Ardy merupakan sosok yang terlibat di banyak organisasi dan berbagai pengalamannya sampai pada saat ini memungkinkan ia dapat masuk ke berbagai elemen masyarakat.
+          </p>
           <Slider {...settings}>
             <div style={{ margin: '10px' }}>
               <img style={{ display: 'table', width: '100%', padding: '20px' }} src={'./images/1.jpg'} alt="kabar"/>

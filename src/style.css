@@ -221,3 +221,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
   color: rgb(255, 255, 255)!important;
 
 }
+.breadcrumb {
+  font-size: 12px;
+  padding: 0!important;
+  background-color: #fff!important;
+  margin-top: 30px;
+  margin-bottom: 10px!important;
+  color: #9b9b9b!important;
+}
+.breadcrumb-item a {
+  color: #777777!important;
+}
+.breadcrumb-item:hover a {
+  color: #0f993b!important;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+  display: inline-block;
+  padding-right: .5rem;
+  color: #727171!important;
+  content: "/";
+}
+.breadcrumb-item.active {
+  color: #bdbdbd!important;
+}
+
+.h2DetalBerita {
+  margin-top: -15px!important;
+  padding-top: -10px!important;
+}
+.judulBeritaTerkait {
+  color: rgb(37, 37, 37);
+}
+.judulBeritaTerkait:hover {
+  color: #00923a;
+}
+.sosialShareButton > li {
+  display: table;
+  background: yellow;
+  float: left;
+  margin:  10px 0px 10px 10px;
+  padding: 0px 10px;
+}

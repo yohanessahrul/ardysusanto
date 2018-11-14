@@ -20,7 +20,7 @@ class ProfilArdy extends Component {
               <p style={{ textAlign: 'center', marginTop: '40px', fontSize: '18px' }}>
                 Ardy Susanto lahir di Ujung Pandang (sekarang Kota Makassar), Sulawesi Selatan pada 30 Oktober 1984, Ardy menyelesaikan pendidikan ilmu Hukum di Universitas Tarumanegara pada 2007. Pada tahun 2009-2014, Ardy dipercaya menjadi Tenaga Ahli Anggota DPR RI.
                 <br/>
-                "Saya masuk politik karena mau bantu orang dan itu lebih murah dan lebih mudah melalui jalur politik." tutur Ketua Umum DPP Ikatan Pemuda Tionghoa Indonesia, Ardy Susanto.
+                "Saya masuk politik karena mau bantu orang dan itu lebih mudah melalui jalur politik." tutur Ketua Umum DPP Ikatan Pemuda Tionghoa Indonesia, Ardy Susanto.
               </p>
             </Col>
           </Row>
