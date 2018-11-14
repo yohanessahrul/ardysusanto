@@ -31,13 +31,13 @@ class BeritaTerkait extends Component {
         <Row style={{ width: '100%', marginBottom: '30px' }}>
           <Col md="4">
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[0].judul)}`,
+              pathname: `/berita/${dataBerita.berita[0].id}/${judulParameter(dataBerita.berita[0].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[0])}` }
             }}>
               <img style={{ width: '100%', height: '100px', background: 'yellow' }} src={`/images/${dataBerita.berita[0].img}`} alt="img-berita-terkait"/>
             </Link>
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[0].judul)}`,
+              pathname: `/berita/${dataBerita.berita[0].id}/${judulParameter(dataBerita.berita[0].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[0])}` }
             }}>
               <h6 className="judulBeritaTerkait" style={{ padding: '5px 0px' }}>{dataBerita.berita[0].judul}</h6>
@@ -45,13 +45,13 @@ class BeritaTerkait extends Component {
           </Col>
           <Col md="4">
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[1].judul)}`,
+              pathname: `/berita/${dataBerita.berita[1].id}/${judulParameter(dataBerita.berita[1].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[1])}` }
             }}>
               <img style={{ width: '100%', height: '100px', background: 'yellow' }} src={`/images/${dataBerita.berita[1].img}`} alt="img-berita-terkait"/>
             </Link>
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[1].judul)}`,
+              pathname: `/berita/${dataBerita.berita[1].id}/${judulParameter(dataBerita.berita[1].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[1])}` }
             }}>
               <h6 className="judulBeritaTerkait" style={{ padding: '5px 0px' }}>{dataBerita.berita[1].judul}</h6>
@@ -59,13 +59,13 @@ class BeritaTerkait extends Component {
           </Col>
           <Col md="4">
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[2].judul)}`,
+              pathname: `/berita/${dataBerita.berita[2].id}/${judulParameter(dataBerita.berita[2].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[2])}` }
             }}>
               <img style={{ width: '100%', height: '100px', background: 'yellow' }} src={`/images/${dataBerita.berita[2].img}`} alt="img-berita-terkait"/>
             </Link>
             <Link to={{
-              pathname: `/berita/${judulParameter(dataBerita.berita[2].judul)}`,
+              pathname: `/berita/${dataBerita.berita[2].id}/${judulParameter(dataBerita.berita[2].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[2])}` }
             }}>
               <h6 className="judulBeritaTerkait" style={{ padding: '5px 0px' }}>{dataBerita.berita[2].judul}</h6>

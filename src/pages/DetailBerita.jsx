@@ -3,7 +3,6 @@ import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link} from 'react-router-dom';
 import Header from '../components/Header';
 import BeritaTerkait from '../components/BeritaTerkait';
-import ShareSosmed from '../components/ShareSosmed';
 
 import { Icon } from 'react-icons-kit';
 import {calendar,eye} from 'react-icons-kit/fa';
@@ -56,7 +55,6 @@ class DetailBerita extends Component {
               </div>
               <div dangerouslySetInnerHTML={{ __html: data.isi }}>
               </div>
-              <ShareSosmed/>
               <BeritaTerkait dataBeritaTerkait={data}/>
             </Col>
             <Col md="4">
