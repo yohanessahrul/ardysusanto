@@ -7,7 +7,7 @@ import ListBerita from '../components/ListBerita';
 import dataBerita from '../berita.json';
 
 // note
-// 1. panggil api untuk tarik data berita semua disini
+// 1. panggil api untuk tarik data semua berita disini
 
 class Berita extends Component {
   render() {

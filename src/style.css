@@ -262,3 +262,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#238d45', end
   margin:  10px 0px 10px 10px;
   padding: 0px 10px;
 }
+.hiddenShare {
+  display: none;
+}

@@ -1,3 +1,4 @@
+import history from '../history';
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,16 @@ import { Link } from 'react-router-dom';
 import dataBerita from '../berita.json';
 
 class BeritaTerkait extends Component {
+  constructor (props) {
+    super (props)
+    this.state = {}
+    this.goTo = this.goTo.bind(this);
+  }
+  goTo (id, judul) {
+    this.forceUpdate();
+    history.push(`/berita/${id}/${judul}`)
+    // console.log(`menuju ke halaman ${id}, ${judul}`)
+  }
   componentDidMount () {
     // console.log('This is props berita terkait===> ', dataBerita.berita)
     document.body.scrollTop = 0;
@@ -34,7 +45,7 @@ class BeritaTerkait extends Component {
               pathname: `/berita/${dataBerita.berita[0].id}/${judulParameter(dataBerita.berita[0].judul)}`,
               state: { beritaterpilih: `${JSON.stringify(dataBerita.berita[0])}` }
             }}>
-              <img style={{ width: '100%', height: '100px', background: 'yellow' }} src={`/images/${dataBerita.berita[0].img}`} alt="img-berita-terkait"/>
+              <img style={{ width: '100%', height: '100px', background: 'yellow' }} src={`/images/${dataBerita.berita[0].img}`} alt="img-berita-terkait1"/>
             </Link>
             <Link to={{
               pathname: `/berita/${dataBerita.berita[0].id}/${judulParameter(dataBerita.berita[0].judul)}`,

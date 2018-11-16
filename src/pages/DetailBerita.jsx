@@ -1,3 +1,4 @@
+// import history from '../history';
 import React, { Component } from 'react';
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link} from 'react-router-dom';
@@ -19,16 +20,32 @@ class DetailBerita extends Component {
       isLoading: false,
       beritaTerpilih: null
     }
+    this.goTo = this.goTo.bind(this);
   }
   componentDidMount () {
+    // console.log(JSON.parse(this.props.location.state.beritaterpilih))
     for (var i=0; i < dataBerita.berita.length; i++) {
       if (dataBerita.berita[i].id === this.props.match.params.id) {
         this.setState({
           isLoading: true,
           beritaTerpilih: dataBerita.berita[i]
         })
+        localStorage.setItem('artikel', JSON.stringify(dataBerita.berita[i]))
       }
     }
+  }
+  componentWillReceiveProps (nextProps) {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+    // nextProps === this.props, tetapi dapat mengambil value yang sebenarnya
+    let bTerpilih = nextProps.location.state.beritaterpilih
+    this.setState({
+      beritaTerpilih: JSON.parse(bTerpilih)
+    })
+  }
+  goTo (id, judul) {
+    console.log('Masuk ke go to ID =>', this.props.location.pathname)
   }
   render() {
     if (this.state.isLoading === false) {

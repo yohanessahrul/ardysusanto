@@ -6,6 +6,9 @@ import ProfilArdy from '../components/ProfilArdy';
 import RekamJejakArdy from '../components/RekamJejakArdy';
 
 class Profile extends Component {
+  componentDidMount () {
+    
+  }
   render() {
     return (
       <div>
