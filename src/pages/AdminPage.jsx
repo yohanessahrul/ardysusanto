@@ -34,13 +34,14 @@ class AdminPage extends Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container fluid>
           <Row>
-            <Col>
-              <br/>
-              <h1>Administrator page</h1>
-              <Button onClick={this.logOut}>Logout</Button>
-              <p>Ini adalah halaman administrator yang dikembangkan oleh yosaru.com</p>
+            <Col md="2" style={{ width: '100%', height: '100vh', background: 'red' }}>
+              <h5>AdminLTE</h5>
+            </Col>
+            <Col md="10">
+              <h1>Halaman Admin</h1>
+              <Button onClick={this.logOut} color="danger">Logout</Button>
             </Col>
           </Row>
         </Container>
