@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-
 import { Icon } from 'react-icons-kit';
 import {clockO} from 'react-icons-kit/fa';
 

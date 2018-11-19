@@ -13,12 +13,12 @@ class Login extends Component {
   }
   cekLogin () {
     if (localStorage.getItem('token')) {
-      history.push('/admin')
+      history.push('/admin/dashboard')
     }
   }
   login () {
     localStorage.setItem('token', 'hahahaha')
-    history.push('/admin')
+    history.push('/admin/dashboard')
   }
   componentDidMount () {
     this.cekLogin()
