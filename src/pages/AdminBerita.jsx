@@ -1,35 +1,47 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import history from '../history';
+import { Container, Row, Col } from 'reactstrap';
 import ContentAdminBerita from '../components/ContentAdminBerita';
+import HeaderAdmin from '../components/HeaderAdmin';
+import SideBarMenu from '../components/SideBarMenu';
+
+import { connect } from 'react-redux';
+import { cekAuthAction } from '../action/action_user';
+import { bindActionCreators } from 'redux';
 
 class AdminBerita extends Component {
+  constructor (props) {
+    super (props)
+    this.logOut = this.logOut.bind(this);
+  }
+  componentDidMount () {
+    this.cekLogin()
+  }
+  cekLogin () {
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token');
+      this.props.cekAuthAction(token)
+    } else {
+      history.push('/login')
+      console.log('Anda bukan admin, redirect ke login')
+    }
+  }
+  logOut () {
+    localStorage.removeItem('token');
+    history.push('/login');
+    console.log('Logout sukses');
+  }
   render() {
     return (
       <div>
         <Container fluid>
           <Row>
-            <Col md="12" style={{ background: 'yellow' }}>
-              <h5 style={{ padding: '5px', marginBottom: '0px' }}>AdminLTE</h5>
-            </Col>
+            <HeaderAdmin/>
           </Row>
-          <Row>
-            <Col md="2" style={{ width: '100%', height: '100vh', background: 'red' }}>
-              <ul>
-                <li>
-                  <Link to="/admin/dashboard">Dashboard</Link>
-                </li>
-                <li>
-                  <Link to="/admin/user">User</Link>
-                </li>
-                <li>
-                  <Link to="/admin/berita">Berita</Link>
-                </li>
-              </ul>
-            </Col>
-            <Col md="10">
+          <Row style={{ background: '#04251b' }}>
+            <SideBarMenu/>
+            <Col md="10" style={{ background: 'white' }}>
               <ContentAdminBerita/>
-              <Button onClick={this.logOut} color="danger">Logout</Button>
             </Col>
           </Row>
         </Container>
@@ -38,4 +50,14 @@ class AdminBerita extends Component {
   }
 }
 
-export default AdminBerita;
+const mapStateToProps = (state) => {
+  return {
+    state: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  cekAuthAction
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminBerita);

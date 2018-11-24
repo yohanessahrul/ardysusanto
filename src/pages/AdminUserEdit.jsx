@@ -3,20 +3,34 @@ import history from '../history';
 import { Container, Row, Col } from 'reactstrap';
 import HeaderAdmin from '../components/HeaderAdmin';
 import SideBarMenu from '../components/SideBarMenu';
-
-import FormTambahBerita from '../components/FormTambahBerita';
+import FormEditUser from '../components/FormEditUser';
 
 import { connect } from 'react-redux';
-import { cekAuthAction } from '../action/action_user';
+import { adminGetOneUserAction, cekAuthAction } from '../action/action_user';
 import { bindActionCreators } from 'redux';
 
-class AdminBeritaTambah extends Component {
+class AdminUserEdit extends Component {
   constructor (props) {
     super (props)
-    this.logOut = this.logOut.bind(this);
+    this.state = {
+      isLoading: false,
+      dataUserById: null
+    }
   }
   componentDidMount () {
+    const pecah = window.location.pathname.split('/')[4]
+    let cleanId = pecah.replace(/[^a-zA-Z0-9 ]/g, "");
+
     this.cekLogin();
+
+    console.log('form edit user => ', this.props)
+    this.props.adminGetOneUserAction(cleanId)
+  }
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      isLoading: true,
+      dataUserById: nextProps.state.reducerUser.readUser
+    })
   }
   cekLogin () {
     if (localStorage.getItem('token')) {
@@ -27,27 +41,28 @@ class AdminBeritaTambah extends Component {
       console.log('Anda bukan admin, redirect ke login')
     }
   }
-  logOut () {
-    localStorage.removeItem('token');
-    history.push('/login');
-    console.log('Logout sukses');
-  }
   render() {
-    return (
-      <div>
-        <Container fluid>
+    if (!this.state.isLoading) {
+      return (
+        <div></div>
+      )
+    } else {
+      return (
+        <div>
+          <Container fluid>
           <Row>
             <HeaderAdmin/>
           </Row>
           <Row>
             <SideBarMenu/>
             <Col md="10">
-              <FormTambahBerita/>
+              <FormEditUser data={this.state.dataUserById}/>
             </Col>
           </Row>
-        </Container>
-      </div>
-    );
+          </Container>
+        </div>
+      );
+    }
   }
 }
 
@@ -58,7 +73,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
+  adminGetOneUserAction,
   cekAuthAction
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminBeritaTambah);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminUserEdit);

@@ -2,13 +2,16 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link} from 'react-router-dom';
-import dataBerita from '../berita.json';
 
 import Header from '../components/Header';
 import BeritaTerkait from '../components/BeritaTerkait';
 
 import { Icon } from 'react-icons-kit';
 import {calendar,eye} from 'react-icons-kit/fa';
+
+import { connect } from 'react-redux';
+import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
+import { bindActionCreators } from 'redux';
 
 // note:
 // bikin api untuk get 1 artikel berdasarkan id
@@ -23,25 +26,19 @@ class DetailBerita extends Component {
     this.goTo = this.goTo.bind(this);
   }
   componentDidMount () {
-    // console.log(JSON.parse(this.props.location.state.beritaterpilih))
-    for (var i=0; i < dataBerita.berita.length; i++) {
-      if (dataBerita.berita[i].id === this.props.match.params.id) {
-        this.setState({
-          isLoading: true,
-          beritaTerpilih: dataBerita.berita[i]
-        })
-        localStorage.setItem('artikel', JSON.stringify(dataBerita.berita[i]))
-      }
-    }
+    const pecah = window.location.pathname.split('/')[2]
+    let cleanId = pecah.replace(/[^a-zA-Z0-9 ]/g, "");
+
+    this.props.readNewsByIdAction(cleanId) // api get current news for read
+    this.props.addViewerAction(cleanId); // api increment view
   }
   componentWillReceiveProps (nextProps) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-
-    // nextProps === this.props, tetapi dapat mengambil value yang sebenarnya
-    let bTerpilih = nextProps.location.state.beritaterpilih
+    
     this.setState({
-      beritaTerpilih: JSON.parse(bTerpilih)
+      isLoading: true,
+      beritaTerpilih: nextProps.state.reducerBerita.readNews
     })
   }
   goTo (id, judul) {
@@ -75,7 +72,7 @@ class DetailBerita extends Component {
                   <div style={{ fontSize: '14px', color: 'gray', float: 'left', marginRight: '20px' }}>
                     <div>
                       <Icon icon={calendar} size={12} style={{ marginRight: '5px' }}/>
-                      {data.date}
+                      {data.createdAt}
                     </div>
                   </div>
                   <div style={{ fontSize: '14px', color: 'gray', float: 'left' }}>
@@ -87,7 +84,7 @@ class DetailBerita extends Component {
                   <div className="clear"></div>
                 </div>
                 <div style={{ width: '100%', height: '380px', background: 'gray', marginBottom: '30px', overflow: 'hidden' }}>
-                  <img style={{ width: '100%' }} src={`/images/${data.img}`} alt={data.img}/>
+                  <img style={{ width: '100%' }} src={data.img} alt={data.img}/>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: data.isi }}>
                 </div>
@@ -105,4 +102,15 @@ class DetailBerita extends Component {
   }
 }
 
-export default DetailBerita;
+const mapStateToProps = (state) => {
+  return {
+    state: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  readNewsByIdAction,
+  addViewerAction
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailBerita);

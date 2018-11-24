@@ -10,7 +10,7 @@ import { Container,
 
 const items = [
   {
-    src: './images/slide1.png',
+    src: './images/adry-dan-cak-imin.jpeg',
     altText: 'Slide 1',
     caption: 'Pertemuan partisipan Ardy Susanto'
   },

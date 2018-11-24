@@ -5,7 +5,6 @@ class Admin extends Component {
   componentDidMount () {
     if (localStorage.getItem('token')) {
       history.push('/admin/dashboard')
-      return console.log('Token ada, anda berhasil masuk')
     } else {
       history.push('/login')
       console.log('Anda bukan admin, redirect ke login')

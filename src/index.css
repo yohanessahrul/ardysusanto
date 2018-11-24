@@ -29,3 +29,63 @@ a {
 .clear {
   clear: both;
 }
+
+textarea.wysig-output {
+  background: #9c9c9c;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+  font-size: 12px;
+}
+.demo-editor {
+  border: thin solid #8f8f8f;
+  background: #f0fff0!important;
+  padding: 0px 10px;
+  height: 350px !important;
+}
+.rdw-editor-toolbar {
+  background: #225a16!important;
+  margin-bottom: -1px!important;
+  border: thin solid #8f8f8f!important;
+}
+.alertify .ajs-footer .ajs-buttons .ajs-button.ajs-ok {
+  color: #ffffff;
+  background: #37a560;
+  text-align: center;
+}
+
+.alertify .ajs-header {
+  background: #e9f78a;
+}
+
+.alertify .ajs-dialog {
+  background-color: #faffe5;
+}
+.sidebarMenu {
+  display: table;
+  width: 100%;
+  padding: 0px!important;
+  margin: 80px 0px 0px 0px!important;
+  background: #014030;
+}
+.sidebarMenu > li {
+  display: block;
+}
+.sidebarMenu > li:hover {
+  background: #064e39;
+}
+.sidebarMenu > li > a {
+  display: block;
+  padding: 10px;
+  color: #99b3aa!important;
+  border-top: thin solid #001f15;
+  border-bottom: thin solid #156650;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #53ca990d;
+}
+
+.table-striped tbody tr:hover:nth-of-type {
+  background-color: #7506060d;
+}
