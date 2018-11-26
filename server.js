@@ -41,7 +41,7 @@ app.get('/berita', function(req, res) {
 
 app.get('/berita/:id/:judul', function(req, res) {
     console.log('masuk detail berita')
-    const filePath = path.res(__dirname, './build', 'index.html');
+    const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
       if (err) {
           return console.log(err);
