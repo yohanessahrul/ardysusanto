@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const app = express();
 
-
 app.get('/', function(req, res) {
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function (err, data) {
@@ -37,7 +36,6 @@ app.get('/berita', function(req, res) {
         res.send(data);
     })
 });
-
 
 app.get('/berita/:id/:judul', function(req, res) {
     console.log('masuk detail berita')
