@@ -41,13 +41,12 @@ class DetailBerita extends Component {
     })
 
     // set SEO meta tag
-
-    // document.title = data.judul;
-    // document.querySelector('meta[name="description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    // document.querySelector('meta[itemprop="image"]').setAttribute("content", data.img);
-    // document.querySelector('meta[property="og:title"]').setAttribute("content", data.judul);
-    // document.querySelector('meta[property="og:description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    // document.querySelector('meta[property="og:image"]').setAttribute("content", data.img);
+    document.title = data.judul;
+    document.querySelector('meta[name="description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    document.querySelector('meta[itemprop="image"]').setAttribute("content", data.img);
+    document.querySelector('meta[property="og:title"]').setAttribute("content", data.judul);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    document.querySelector('meta[property="og:image"]').setAttribute("content", data.img);
   }
   goTo (id, judul) {
     console.log('Masuk ke go to ID =>', this.props.location.pathname)
