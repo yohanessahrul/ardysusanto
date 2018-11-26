@@ -2,19 +2,16 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link} from 'react-router-dom';
+import { Icon } from 'react-icons-kit';
+import {calendar,eye} from 'react-icons-kit/fa';
 
 import Header from '../components/Header';
 import BeritaTerkait from '../components/BeritaTerkait';
-
-import { Icon } from 'react-icons-kit';
-import {calendar,eye} from 'react-icons-kit/fa';
 
 import { connect } from 'react-redux';
 import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
 import { bindActionCreators } from 'redux';
 
-// note:
-// bikin api untuk get 1 artikel berdasarkan id
 
 class DetailBerita extends Component {
   constructor (props) {
@@ -26,20 +23,28 @@ class DetailBerita extends Component {
     this.goTo = this.goTo.bind(this);
   }
   componentDidMount () {
-    const pecah = window.location.pathname.split('/')[2]
+    const pecah = window.location.pathname.split('/')[2];
     let cleanId = pecah.replace(/[^a-zA-Z0-9 ]/g, "");
 
     this.props.readNewsByIdAction(cleanId) // api get current news for read
     this.props.addViewerAction(cleanId); // api increment view
+
   }
   componentWillReceiveProps (nextProps) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    
+    let data = nextProps.state.reducerBerita.readNews;
     this.setState({
       isLoading: true,
-      beritaTerpilih: nextProps.state.reducerBerita.readNews
+      beritaTerpilih: data
     })
+
+    // set SEO meta tag
+    document.title = data.judul;
+    document.querySelector('meta[name="description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    document.querySelector('meta[property="og:title"]').setAttribute("content", data.judul);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    document.querySelector('meta[property="og:image"]').setAttribute("content", data.img);
   }
   goTo (id, judul) {
     console.log('Masuk ke go to ID =>', this.props.location.pathname)
@@ -88,7 +93,7 @@ class DetailBerita extends Component {
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: data.isi }}>
                 </div>
-                <BeritaTerkait dataBeritaTerkait={data}/>
+                {/* <BeritaTerkait dataBeritaTerkait={data}/> */}
               </Col>
               <Col md="4">
                 <img style={{ width: '100%', marginTop: '30px' }} src="/images/poster-ardy.jpeg" alt="poster-ardy"/>
@@ -98,7 +103,6 @@ class DetailBerita extends Component {
         </div>
       );
     }
-    // const data = JSON.parse(this.props.location.state.beritaterpilih);
   }
 }
 

@@ -40,9 +40,6 @@ class Navigation extends Component {
                   </Col>
                   <Col md="5" sm="4">
                     <div style={{ width: '100%', height: '100px' }}>
-                      {/* <p className="slogan">
-                        Bersama membangun<br/>ekonomi kerakyatan
-                      </p> */}
                       <img className="ardyKuat" src={'/images/ardysusanto.png'} alt="img-arysusanto-bersama-membangun-ekonomi-kerakyatan"/>
                     </div>
                   </Col>

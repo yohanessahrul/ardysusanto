@@ -4,7 +4,7 @@ import alertify from 'alertifyjs';
 
 export function getAllNewsAction(judul, isi) {
   return dispatch => {
-    axios.get('http://35.201.1.205:3001/api/berita/read')
+    axios.get('http://35.201.1.205:3000/api/berita/read')
       .then((response) => {
         dispatch(getAllNews(response.data.data))
       })
@@ -15,7 +15,7 @@ export function getAllNewsAction(judul, isi) {
 }
 export function readNewsByIdAction(id) {
   return dispatch => {
-    axios.get(`http://35.201.1.205:3001/api/berita/readbyid/${id}`)
+    axios.get(`http://35.201.1.205:3000/api/berita/readbyid/${id}`)
       .then((response) => {
         dispatch(readNewsById(response.data.data))
       })
@@ -27,7 +27,7 @@ export function readNewsByIdAction(id) {
 
 export function addViewerAction(id) {
   return dispatch => {
-    axios.get(`http://35.201.1.205:3001/api/berita/addviewer/${id}`)
+    axios.get(`http://35.201.1.205:3000/api/berita/addviewer/${id}`)
       .then((response) => {
         // console.log('Viewer bertambah ', response.data.data)
       })
@@ -39,7 +39,7 @@ export function addViewerAction(id) {
 
 export function adminCreateBeritaAction(formData, ) {
   return dispatch => {
-    axios.post('http://35.201.1.205:3001/api/berita/create', formData, {
+    axios.post('http://35.201.1.205:3000/api/berita/create', formData, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
@@ -59,7 +59,7 @@ export function adminCreateBeritaAction(formData, ) {
 
 export function adminDeleteBeritaAction (id) {
   return dispatch => {
-    axios.delete(`http://35.201.1.205:3001/api/berita/deletebyid/${id}`)
+    axios.delete(`http://35.201.1.205:3000/api/berita/deletebyid/${id}`)
       .then((response) => {
         console.log('Value setelah hapus', response.data.data)
         dispatch(getAllNews(response.data.data))

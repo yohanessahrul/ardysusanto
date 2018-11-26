@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import history from '../history';
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'reactstrap';
-import axios from 'axios';
+// import axios from 'axios';
 import alertify from 'alertifyjs';
 
 import { connect } from 'react-redux';

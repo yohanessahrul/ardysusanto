@@ -54,6 +54,7 @@ class ContentAdminUser extends Component {
         const dataUser = this.state.dataUser
         const loopList = dataUser.map(function(data, i) {
           const button = (string, roleLooping, usernameLooping) => {
+            // eslint-disable-next-line
             if (roleLooping === localStorage.getItem('role') && usernameLooping === localStorage.getItem('username') || roleLooping !== 'admin') {
               if (string === 'resetpassword') {
                 return (

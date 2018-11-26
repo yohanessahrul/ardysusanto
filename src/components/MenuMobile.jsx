@@ -46,11 +46,11 @@ class MenuMobile extends Component {
                   Berita
                 </Link>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <Link to="/media">
                   Media
                 </Link>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Navbar>

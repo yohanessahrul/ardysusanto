@@ -28,9 +28,9 @@ class MenuDesktop extends Component {
                   <li>
                     <Link to="/berita">BERITA</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/media">MEDIA</Link>
-                  </li>
+                  </li> */}
                   <div className="clear"></div>
                   <div className="sosmedMenu">
                     <ul>

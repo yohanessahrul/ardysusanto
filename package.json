@@ -9,6 +9,7 @@
     "dotenv": "^6.1.0",
     "draft-js": "^0.10.5",
     "draftjs-to-html": "^0.8.4",
+    "express": "^4.16.4",
     "form-data": "^2.3.3",
     "history": "^4.7.2",
     "html-to-draftjs": "^1.4.0",
