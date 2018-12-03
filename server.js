@@ -22,7 +22,7 @@ app.get('/profil', function(req, res) {
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
         if (err) {
-            return console.log(err);
+          return console.log(err);
         }
         res.send(data);
     })
@@ -33,7 +33,7 @@ app.get('/berita', function(req, res) {
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
         if (err) {
-            return console.log(err);
+          return console.log(err);
         }
         res.send(data);
     })
@@ -41,6 +41,106 @@ app.get('/berita', function(req, res) {
 
 app.get('/berita/:id/:judul', function(req, res) {
     console.log('masuk detail berita')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin', function(req, res) {
+    console.log('masuk admin')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/dashboard', function(req, res) {
+    console.log('masuk admin dashboard')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/user', function(req, res) {
+    console.log('masuk admin user')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/user/tambah', function(req, res) {
+    console.log('masuk admin tambah user')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/user/reset/:id', function(req, res) {
+    console.log('masuk admin reset password')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/user/edit/:id', function(req, res) {
+    console.log('masuk admin edit user')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/berita', function(req, res) {
+    console.log('masuk admin berita')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+
+app.get('/admin/berita/tambah', function(req, res) {
+    console.log('masuk admin berita tambah')
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
+    })
+});
+
+app.get('/admin/berita/edit/:id', function(req, res) {
+    console.log('masuk admin berita edit')
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
       if (err) {
