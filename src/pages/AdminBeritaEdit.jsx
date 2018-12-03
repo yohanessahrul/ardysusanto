@@ -14,12 +14,14 @@ class AdminBeritaEdit extends Component {
     super (props)
     this.state = {
       isLoading: false,
-      userTerpilih: null
+      userTerpilih: null,
+      dataEdit: null
     }
   }
   componentDidMount () {
     this.cekLogin();
   }
+  
   cekLogin () {
     if (localStorage.getItem('token')) {
       let token = localStorage.getItem('token');
@@ -29,6 +31,14 @@ class AdminBeritaEdit extends Component {
       console.log('Anda bukan admin, redirect ke login')
     }
   }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      isLoading: true,
+      dataEdit: nextProps.state.reducerBerita.formEdit
+    })
+  }
+
   render() {
     return (
       <div>
@@ -39,7 +49,7 @@ class AdminBeritaEdit extends Component {
           <Row>
             <SideBarMenu/>
             <Col md="10">
-              <FormEditBerita id={this.props.match.params.id}/>
+              <FormEditBerita id={this.props.match.params.id} data={this.state.dataEdit}/>
             </Col>
           </Row>
         </Container>

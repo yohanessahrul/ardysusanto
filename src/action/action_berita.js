@@ -71,6 +71,18 @@ export function adminDeleteBeritaAction (id) {
   }
 }
 
+export function adminGetDataForForm (id) {
+  return dispatch => {
+    axios.get(`http://35.201.1.205:3000/api/berita/readbyid/${id}`)
+      .then((response) => {
+        dispatch(formEdit(response.data.data))
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+}
+
 export function getAllNews (payload) {
   return {
     type: 'GET_ALL_NEWS',
@@ -80,6 +92,12 @@ export function getAllNews (payload) {
 export function readNewsById (payload) {
   return {
     type: 'READ_NEWS_BY_ID',
+    payload: payload
+  }
+}
+export function formEdit (payload) {
+  return {
+    type: 'FORM_EDIT',
     payload: payload
   }
 }

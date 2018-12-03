@@ -2,6 +2,7 @@ const initilState = {
   isLoading: false,
   data: null,
   readNews: null,
+  formEdit: null
 }
 
 export default function reducerBerita(state={...initilState}, action) {
@@ -25,6 +26,11 @@ export default function reducerBerita(state={...initilState}, action) {
       return {
         ...state,
         data: action.payload
+      }
+    case 'FORM_EDIT':
+      return {
+        ...state,
+        formEdit: action.payload
       }
     default: 
       return state;

@@ -66,7 +66,7 @@ console.log('proses id', id)
       .then((response) => {
         history.push('/admin/user')
         alertify.success(`Password user ${response.data.data.username} berhasil diubah`)
-        console.log('PAssword berhasil di reset', response)
+        console.log('Password berhasil di reset', response)
       })
       .catch((err) => {
         return console.log(err)

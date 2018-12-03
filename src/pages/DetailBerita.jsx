@@ -6,13 +6,13 @@ import { Icon } from 'react-icons-kit';
 import {calendar,eye} from 'react-icons-kit/fa';
 
 import Header from '../components/Header';
-import BeritaTerkait from '../components/BeritaTerkait';
+// import BeritaTerkait from '../components/BeritaTerkait';
 
 import { connect } from 'react-redux';
 import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
 import { bindActionCreators } from 'redux';
 
-import DocumentMeta from 'react-document-meta';
+// import DocumentMeta from 'react-document-meta';
 
 class DetailBerita extends Component {
   constructor (props) {

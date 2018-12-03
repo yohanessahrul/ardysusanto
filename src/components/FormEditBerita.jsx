@@ -11,10 +11,15 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+import { connect } from 'react-redux';
+import { adminGetDataForForm } from '../action/action_berita';
+import { bindActionCreators } from 'redux';
+
 class FormEditBerita extends Component {
   constructor (props) {
     super (props)
     this.state = {
+      isLoading: false,
       editorState: EditorState.createEmpty(),
       judul: '',
       wysig: '',
@@ -24,26 +29,22 @@ class FormEditBerita extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  componentDidMount () {
-    console.log('ID ===> ', this.props.id)
-    axios.get(`http://35.201.1.205:3001/api/berita/readbyid/${this.props.id}`)
-      .then((response) => {
-        console.log(response.data.data)
-        const { judul, isi } = response.data.data
 
-        const blocksFromHtml = htmlToDraft(isi);
-        const { contentBlocks, entityMap } = blocksFromHtml;
-        const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
-        const editorState = EditorState.createWithContent(contentState);
-        
-        this.setState({
-          judul: judul,
-          editorState: editorState,
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+  componentDidMount () {
+    this.props.adminGetDataForForm(this.props.id);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const blocksFromHtml = htmlToDraft(nextProps.data.isi);
+    const { contentBlocks, entityMap } = blocksFromHtml;
+    const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+    const editorState = EditorState.createWithContent(contentState);
+
+    this.setState({
+      judul: nextProps.data.judul,
+      editorState: editorState
+    })
+    // console.log('Child get nextProps ===> ', nextProps.data)
   }
   onEditorStateChange (editorState) {
     this.setState({
@@ -78,7 +79,7 @@ class FormEditBerita extends Component {
       })
   }
   componentDidUpdate () {
-    console.log('update', convertToRaw(this.state.editorState.getCurrentContent()))
+    // console.log('update', convertToRaw(this.state.editorState.getCurrentContent()))
   }
   render() {
     const { editorState } = this.state;
@@ -100,10 +101,6 @@ class FormEditBerita extends Component {
                 onEditorStateChange={this.onEditorStateChange}
             />
           </FormGroup>
-          {/* <textarea className="wysig-output"
-            disabled
-            value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
-          /> */}
           <Button onClick={this.onSubmit} color="primary">Simpan</Button>
         </Form>
       </div>
@@ -111,4 +108,14 @@ class FormEditBerita extends Component {
   }
 }
 
-export default FormEditBerita;
+const mapStateToProps = (state) => {
+  return {
+    state: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  adminGetDataForForm
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormEditBerita);
