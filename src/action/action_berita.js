@@ -83,6 +83,57 @@ export function adminGetDataForForm (id) {
   }
 }
 
+export function updateBeritaById (id, payload) {
+  return dispatch => {
+    axios.put(`http://35.201.1.205:3000/api/berita/updatebyid/${id}`, {
+      judul: payload.judul,
+      isi: payload.isi
+    })
+      .then((response) => {
+        history.push('/admin/berita')
+        alertify.success(`"${response.data.data.judul}" berhasil diubah`);
+      })
+      .catch((err) => {
+        return console.log(err)
+      })
+  }
+}
+
+export function changeNewsImage (id, formData) {
+  return dispatch => {
+    axios.put(`http://35.201.1.205:3000/api/berita/ubahgambar/${id}`, formData, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
+      .then((response) => {
+        dispatch(getAllNews(response.data.data))
+        alertify.success('Gambar berhasil diubah')
+      })
+      .catch((err) => {
+        return console.log(err)
+      })
+  }
+}
+
+export function getNewNews (id) {
+  return dispatch => {
+    axios.get(`http://35.201.1.205:3000/api/berita/beritaterbaru/${id}`)
+      .then((response) => {
+        dispatch(newNews(response.data.data))
+      })
+      .catch((err) => {
+        return console.log(err)
+      })
+  }
+}
+
+export function newNews (payload) {
+  return {
+    type: 'GET_BERITA_TERBARU',
+    payload: payload
+  }
+}
 export function getAllNews (payload) {
   return {
     type: 'GET_ALL_NEWS',

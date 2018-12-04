@@ -35,10 +35,10 @@ class MenuDesktop extends Component {
                   <div className="sosmedMenu">
                     <ul>
                       {/* <li style={{ fontSize: '12px', marginTop: '15px' }}>Sosial Media : </li> */}
-                      <li><Button className="btnSosmed" href="http://google.com" target="_blank"><Icon size={22} className="iconSosmed" icon={facebookSquare}/></Button></li>
-                      <li><Button className="btnSosmed" href="http://google.com" target="_blank"><Icon size={22} className="iconSosmed" icon={twitterSquare}/></Button></li>
-                      <li><Button className="btnSosmed" href="http://google.com" target="_blank"><Icon size={22} className="iconSosmed" icon={instagram}/></Button></li>
-                      <li><Button className="btnSosmed" href="http://google.com" target="_blank"><Icon size={22} className="iconSosmed" icon={youtubePlay}/></Button></li>
+                      <li><Button className="btnSosmed" href="https://www.facebook.com/Sahabat-ardy-susanto-2180902908788913/?ti=as" target="_blank"><Icon size={22} className="iconSosmed" icon={facebookSquare}/></Button></li>
+                      <li><Button className="btnSosmed" href="#"><Icon size={22} className="iconSosmed" icon={twitterSquare}/></Button></li>
+                      <li><Button className="btnSosmed" href="https://www.instagram.com/oey.ardysusanto/" target="_blank"><Icon size={22} className="iconSosmed" icon={instagram}/></Button></li>
+                      <li><Button className="btnSosmed" href="#"><Icon size={22} className="iconSosmed" icon={youtubePlay}/></Button></li>
                     </ul>
                   </div>
                 </ul>

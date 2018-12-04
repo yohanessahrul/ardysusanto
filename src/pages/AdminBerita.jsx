@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import history from '../history';
 import { Container, Row, Col } from 'reactstrap';
 import ContentAdminBerita from '../components/ContentAdminBerita';
-import HeaderAdmin from '../components/HeaderAdmin';
 import SideBarMenu from '../components/SideBarMenu';
 
 import { connect } from 'react-redux';
@@ -35,9 +34,9 @@ class AdminBerita extends Component {
     return (
       <div>
         <Container fluid>
-          <Row>
+          {/* <Row>
             <HeaderAdmin/>
-          </Row>
+          </Row> */}
           <Row style={{ background: '#04251b' }}>
             <SideBarMenu/>
             <Col md="10" style={{ background: 'white' }}>

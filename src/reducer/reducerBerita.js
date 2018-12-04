@@ -2,7 +2,8 @@ const initilState = {
   isLoading: false,
   data: null,
   readNews: null,
-  formEdit: null
+  formEdit: null,
+  beritaTerbaru: null
 }
 
 export default function reducerBerita(state={...initilState}, action) {
@@ -31,6 +32,11 @@ export default function reducerBerita(state={...initilState}, action) {
       return {
         ...state,
         formEdit: action.payload
+      }
+    case 'GET_BERITA_TERBARU':
+      return {
+        ...state,
+        beritaTerbaru: action.payload
       }
     default: 
       return state;

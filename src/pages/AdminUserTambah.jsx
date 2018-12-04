@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import history from '../history';
 import { Container, Row, Col } from 'reactstrap';
-import HeaderAdmin from '../components/HeaderAdmin';
 import SideBarMenu from '../components/SideBarMenu';
 import FormTambahUser from '../components/FormTambahUser';
 
@@ -27,9 +26,6 @@ class AdminUserTambah extends Component {
     return (
       <div>
         <Container fluid>
-          <Row>
-            <HeaderAdmin/>
-          </Row>
           <Row>
             <SideBarMenu/>
             <Col md="10">

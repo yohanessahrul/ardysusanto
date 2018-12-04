@@ -74,11 +74,11 @@ class FormTambahBerita extends Component {
           <FormGroup>
             <Label>Isi Berita</Label>
             <Editor
-                style={{ width: '100%', background: 'red' }}
-                editorState={editorState}
-                wrapperClassName="demo-wrapper"
-                editorClassName="demo-editor"
-                onEditorStateChange={this.onEditorStateChange}
+              style={{ width: '100%', background: 'red' }}
+              editorState={editorState}
+              wrapperClassName="demo-wrapper"
+              editorClassName="demo-editor"
+              onEditorStateChange={this.onEditorStateChange}
             />
           </FormGroup>
           <Input type="file" id="file" name="img" onChange={this.handleFiles} multiple/> <br/>

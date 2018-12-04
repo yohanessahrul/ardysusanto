@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import {
   EditorState,
@@ -12,7 +11,7 @@ import htmlToDraft from 'html-to-draftjs';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import { connect } from 'react-redux';
-import { adminGetDataForForm } from '../action/action_berita';
+import { adminGetDataForForm, updateBeritaById } from '../action/action_berita';
 import { bindActionCreators } from 'redux';
 
 class FormEditBerita extends Component {
@@ -44,49 +43,36 @@ class FormEditBerita extends Component {
       judul: nextProps.data.judul,
       editorState: editorState
     })
-    // console.log('Child get nextProps ===> ', nextProps.data)
   }
+
   onEditorStateChange (editorState) {
     this.setState({
       editorState,
     });
   }
+
   onChange (e) {
     console.log(e.target.name, ' = ', e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
   }
+
   onSubmit (e) {
     e.preventDefault();
-    console.log('data => ', this.state.judul, draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())))
-    var payload = {
+    let payload = {
       judul: this.state.judul,
-      isi: draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())),
-      img: 'test.jpg'
+      isi: draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
     }
-    console.log('payload=>', payload)
-    axios.put(`http://35.201.1.205:3001/api/berita/updatebyid/${this.props.id}`, {
-      judul: this.state.judul,
-      isi: draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())),
-      img: 'test.jpg'
-    })
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    this.props.updateBeritaById(this.props.id, payload)
   }
-  componentDidUpdate () {
-    // console.log('update', convertToRaw(this.state.editorState.getCurrentContent()))
-  }
+  
   render() {
     const { editorState } = this.state;
     return (
       <div style={{ padding: '50px 5%' }}>
         <h1>Form Edit Berita</h1>
-        <Form>
+        <Form encType="application/x-www-form-urlencoded">
           <FormGroup>
             <Label>Judul</Label>
             <Input onChange={this.onChange} type="text" name="judul" value={this.state.judul} />
@@ -115,7 +101,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  adminGetDataForForm
+  adminGetDataForForm,
+  updateBeritaById
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormEditBerita);

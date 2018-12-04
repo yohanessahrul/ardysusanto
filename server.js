@@ -144,7 +144,7 @@ app.get('/admin/berita/edit/:id', function(req, res) {
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
       if (err) {
-          return console.log(err);
+        return console.log(err);
       }
       res.send(data);
     })

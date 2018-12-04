@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import history from '../history';
 import { Container, Row, Col } from 'reactstrap';
-import HeaderAdmin from '../components/HeaderAdmin';
 import SideBarMenu from '../components/SideBarMenu';
 import FormEditUser from '../components/FormEditUser';
 
@@ -50,9 +49,6 @@ class AdminUserEdit extends Component {
       return (
         <div>
           <Container fluid>
-          <Row>
-            <HeaderAdmin/>
-          </Row>
           <Row>
             <SideBarMenu/>
             <Col md="10">
