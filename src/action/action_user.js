@@ -4,7 +4,7 @@ import alertify from 'alertifyjs';
 
 export function loginAction(email, password) {
   return dispatch => {
-    axios.post('http://35.201.1.205:3000/api/user/login', {
+    axios.post('http://35.185.181.27:3000/api/user/login', {
       email: email,
       password: password
     })
@@ -37,7 +37,7 @@ export function loginAction(email, password) {
 
 export function admingetAllUserAction() {
   return dispatch => {
-    axios.get('http://35.201.1.205:3000/api/user/read')
+    axios.get('http://35.185.181.27:3000/api/user/read')
       .then((response) => {
         dispatch(adminGetAllUser(response.data.data))
       })
@@ -49,7 +49,7 @@ export function admingetAllUserAction() {
 
 export function adminGetOneUserAction (id) {
   return dispatch => {
-    axios.get(`http://35.201.1.205:3000/api/user/readbyid/${id}`)
+    axios.get(`http://35.185.181.27:3000/api/user/readbyid/${id}`)
       .then((response) => {
         dispatch(adminGetOneUser(response.data.data))
       })
@@ -62,7 +62,7 @@ export function adminGetOneUserAction (id) {
 export function adminResetUserPasswordAction (id, password, role) {
 console.log('proses id', id)
   return dispatch => {
-    axios.post(`http://35.201.1.205:3000/api/user/resetpassword/${id}`, { password: password, role: role })
+    axios.post(`http://35.185.181.27:3000/api/user/resetpassword/${id}`, { password: password, role: role })
       .then((response) => {
         history.push('/admin/user')
         alertify.success(`Password user ${response.data.data.username} berhasil diubah`)
@@ -77,7 +77,7 @@ console.log('proses id', id)
 export function adminDeleteUserAction (id) {
   console.log('Hapus user action id => ', id)
   return dispatch => {
-    axios.delete(`http://35.201.1.205:3000/api/user/delete/${id}`)
+    axios.delete(`http://35.185.181.27:3000/api/user/delete/${id}`)
       .then((response) => {
         console.log(response.data.data)
         dispatch(adminGetAllUser(response.data.data))
@@ -91,7 +91,7 @@ export function adminDeleteUserAction (id) {
 export function adminEditRoleAction (id, newRole) {
   console.log('Admin edit role action =>', id, newRole)
   return dispatch => {
-    axios.post(`http://35.201.1.205:3000/api/user/editrole/${id}`, { role: newRole })
+    axios.post(`http://35.185.181.27:3000/api/user/editrole/${id}`, { role: newRole })
       .then((response) => {
         if (response) {
           // console.log('----------------> ', response.data.data)
@@ -110,7 +110,7 @@ export function adminEditRoleAction (id, newRole) {
 export function adminCreateUserAction (username, email, password) {
   console.log('action ==>', username, email, password)
   return dispatch => {
-    axios.post('http://35.201.1.205:3000/api/user/register', { username, email, password })
+    axios.post('http://35.185.181.27:3000/api/user/register', { username, email, password })
       .then((response) => {
         dispatch(adminGetAllUser(response.data.data))
         history.push('/admin/user')
@@ -124,7 +124,7 @@ export function adminCreateUserAction (username, email, password) {
 
 export function cekAuthAction (token) {
   return dispatch => {
-    axios.get(`http://35.201.1.205:3000/api/user/cekauth/${token}`)
+    axios.get(`http://35.185.181.27:3000/api/user/cekauth/${token}`)
       .then((response) => {
         if (response.data.message === 'no') {
           localStorage.removeItem('token')
