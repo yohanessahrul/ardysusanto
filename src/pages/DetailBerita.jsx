@@ -98,7 +98,7 @@ class DetailBerita extends Component {
                   </div>
                   <div className="clear"></div>
                 </div>
-                <div style={{ width: '100%', height: '380px', background: 'gray', marginBottom: '30px', overflow: 'hidden' }}>
+                <div className="wadahImageDetail">
                   <img style={{ width: '100%' }} src={datas.img} alt={datas.img}/>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: datas.isi }}>

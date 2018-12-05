@@ -34,6 +34,30 @@
   .h3ArdySekilas { text-align: center; }
   .btnSekilas { display: table; margin: 0 auto!important; }
   .paddingSection { padding-top: 60px; padding-bottom: 60px; }
+  h3.judulListBerita {
+    margin-top: 15px;
+    font-size: 23px !important;
+  }
+  .dateListBerita {
+    color: rgb(161, 161, 161);
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .iconListBerita {
+    height: 13px !important;
+    font-size: 13px !important;
+    margin-right: 5px;
+  }
+  .pListBerita {
+    font-size: 14px;
+  }
+  .wadahImageDetail {
+    width: 100%;
+    height: 250px;
+  }
+  .imageBeritaTerbaru {
+    height: 200px;
+  }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -71,6 +95,27 @@
   .pArdy { padding: 5px 10px!important; font-size: 18px; text-align: center }
   .h3ArdySekilas { text-align: center; }
   .paddingSection { padding-top: 100px; padding-bottom: 100px; }
+  h3.judulListBerita {
+    margin-top: 0;
+    font-size: 18px !important;
+  }
+  .dateListBerita {
+    color: rgb(161, 161, 161);
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .iconListBerita {
+    height: 13px !important;
+    font-size: 16px !important;
+    margin-right: 8px;
+  }
+  .pListBerita {
+    font-size: 14px;
+  }
+  .wadahImageDetail {
+    width: 100%;
+    height: 180px;
+  }
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -100,6 +145,27 @@
   .h3ArdySekilas { text-align: left; } 
   .pArdy { padding: 0!important; text-align: left; }
   .btnSekilas { display: table; margin: 0!important; }
+  h3.judulListBerita {
+    margin-top: 0;
+    font-size: 20px !important;
+  }
+  .dateListBerita {
+    color: rgb(161, 161, 161);
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .iconListBerita {
+    height: 13px !important;
+    font-size: 16px !important;
+    margin-right: 8px;
+  }
+  .pListBerita {
+    font-size: 14px;
+  }
+  .wadahImageDetail {
+    width: 100%;
+    height: 280px;
+  }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -125,6 +191,27 @@
   .iframeYutub { width: 60%; height: 320px; }
   .fotoDesktopSekilasArdy { display: none; }
   .fotoMobileSekilasArdy { display: block; }
+  h3.judulListBerita {
+    margin-top: 0;
+    font-size: 25px !important;
+  }
+  .dateListBerita {
+    color: rgb(161, 161, 161);
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .iconListBerita {
+    height: 13px !important;
+    font-size: 16px !important;
+    margin-right: 8px;
+  }
+  .pListBerita {
+    font-size: 14px;
+  }
+  .wadahImageDetail {
+    width: 100%;
+    height: 380px;
+  }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -150,4 +237,11 @@
   .iframeYutub { width: 60%; height: 375px; }
   .fotoDesktopSekilasArdy { display: block; }
   .fotoMobileSekilasArdy { display: none; }
+  h3.judulListBerita {
+    font-size: 30px !important;
+  }
+  .wadahImageDetail {
+    width: 100%;
+    height: 380px;
+  }
 }

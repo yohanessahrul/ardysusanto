@@ -47,7 +47,7 @@ class ListBerita extends Component {
                   </div>
                 </Col>
                 <Col md="8">
-                  <h3 style={{  color: '#555555', lineHeight: '1.3em' }}>
+                  <h3 className="judulListBerita">
                     <Link to={{
                       pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
                       state: { id: `${JSON.stringify(data._id)}` }
@@ -55,11 +55,11 @@ class ListBerita extends Component {
                       {data.judul}
                     </Link>
                   </h3>
-                  <div style={{ color: '#999999', fontSize: '14px', marginBottom: '15px' }}>
-                    <Icon style={{ marginRight: '5px', marginTop: '-5px', color: '#999999' }} size={14} icon={calendar} />
+                  <div className="dateListBerita">
+                    <Icon className="iconListBerita" icon={calendar} size={13}/>
                     {dateFormatClean(data.createdAt)}
                   </div>
-                  <p style={{ fontFamily: 'Nunito Sans' }}>{ data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,300) + '..' }</p>
+                  <p className="pListBerita" style={{ fontFamily: 'Nunito Sans' }}>{ data.isi.replace(/(<([^>]+)>)/ig,"").substring(18,300) + '..' }</p>
                 </Col>
               </Row>
             </Col>
