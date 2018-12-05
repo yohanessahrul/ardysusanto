@@ -8,6 +8,8 @@ import {calendar,eye} from 'react-icons-kit/fa';
 import Header from '../components/Header';
 import BeritaTerbaru from '../components/BeritaTerbaru';
 
+import { dateFormatClean } from '../helper/function'
+
 import { connect } from 'react-redux';
 import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
 import { bindActionCreators } from 'redux';
@@ -85,7 +87,7 @@ class DetailBerita extends Component {
                   <div style={{ fontSize: '14px', color: 'gray', float: 'left', marginRight: '20px' }}>
                     <div>
                       <Icon icon={calendar} size={12} style={{ marginRight: '5px' }}/>
-                      {datas.createdAt}
+                      {dateFormatClean(datas.createdAt)}
                     </div>
                   </div>
                   <div style={{ fontSize: '14px', color: 'gray', float: 'left' }}>

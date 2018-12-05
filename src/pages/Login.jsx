@@ -48,24 +48,27 @@ class Login extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="loginBg">
         <Container>
           <Row>
-            <Col>
-              <br/>
-              <h1>Halaman Login</h1>
+            <Col md="4"></Col>
+            <Col md="4">
+              <br/><br/><br/><br/>
               <Form onSubmit={this.onSubmit}>
+                {/* <h3 style={{ background: 'red', display: 'block', textAlign: 'center' }}>Login</h3> */}
                 <FormGroup>
                   <Label>Email</Label>
-                  <Input onChange={this.onChange} type="text" name="email" placeholder="Email"/>
+                  <Input onChange={this.onChange} type="text" name="email" placeholder=""/>
                 </FormGroup>
                 <FormGroup>
                   <Label>Password</Label>
-                  <Input onChange={this.onChange} type="text" name="password" placeholder="Password"/>
+                  <Input onChange={this.onChange} type="password" name="password" placeholder=""/>
                 </FormGroup>
-                <Button>Masuk</Button>
+                <br/>
+                <Button block color="warning">Masuk</Button>
               </Form>
             </Col>
+            <Col md="4"></Col>
           </Row>
         </Container>
       </div>

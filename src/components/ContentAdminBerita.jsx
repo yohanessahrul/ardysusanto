@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import history from '../history';
 import { Link } from 'react-router-dom';
 import {
   Table,
@@ -9,14 +8,12 @@ import {
   ModalBody,
   Form,
   Input,
-  // ModalFooter,
-  // FormGroup,
-  // Label,
 } from 'reactstrap';
 import alertify from 'alertifyjs';
-
 import { Icon } from 'react-icons-kit';
 import {photo} from 'react-icons-kit/fa';
+
+import { judulConvertToUrlParameter, dateFormatCleanAdmin } from '../helper/function'
 
 import { connect } from 'react-redux';
 import { adminDeleteBeritaAction, getAllNewsAction, changeNewsImage } from '../action/action_berita';
@@ -128,9 +125,15 @@ class ContentAdminBerita extends Component {
                     </ModalBody>
                   </Modal>
                 </td>
-                <td>{berita.judul}</td>
+                <td>
+                  <Link className="judulHref" to={`/berita/${berita._id}/${judulConvertToUrlParameter(berita.judul)}`} target="_blank">
+                    <p style={{ color: '#316765', fontWeight: 'bold' }}>
+                      {berita.judul}
+                    </p>
+                  </Link>
+                </td>
                 <td>{berita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,200) + '..'}</td>
-                <td>{berita.createdAt}</td>
+                <td>{dateFormatCleanAdmin(berita.createdAt)}</td>
                 <td>{berita.view}</td>
                 <td>
                   <Link style={{ display: 'table', marginBottom: '10px' }} to={`/admin/berita/edit/${berita._id}`}>
@@ -138,9 +141,13 @@ class ContentAdminBerita extends Component {
                       Edit
                     </Button>
                   </Link>
-                  <Button onClick={() => this.deleteBerita(berita._id)} size="sm" color="danger">
-                    Delete
-                  </Button>
+                  {
+                    (localStorage.getItem('role') === 'author') ? ''
+                    :
+                    <Button onClick={() => this.deleteBerita(berita._id)} size="sm" color="danger">
+                      Delete
+                    </Button>
+                  }
                 </td>
               </tr>
             )
