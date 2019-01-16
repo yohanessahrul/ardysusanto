@@ -17,6 +17,7 @@ class ListBerita extends Component {
       isLoading: false,
       dataBerita: null
     }
+    this.goToLink = this.goToLink.bind(this);
   }
   componentDidMount () {
     this.props.getAllNewsAction() // api get all news
@@ -27,6 +28,14 @@ class ListBerita extends Component {
       dataBerita: nextProps.state.reducerBerita.data
     })
   }
+
+  goToLink (link) {
+    console.log('Goto Link => ', link)
+    // location.reload(link)
+    history.push(link)
+    window.location.reload(true)
+  }
+
   render() {
     const listBerita = () => {
       const dataBerita = this.state.dataBerita
@@ -38,22 +47,22 @@ class ListBerita extends Component {
               <Row>
                 <Col md="4">
                   <div style={{ position: 'relative', width: '100%', height: '200px', background: '#e3e3e3', overflow: 'hidden' }}>
-                    <Link to={{
+                    {/* <Link to={{
                       pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
                       state: { beritaterpilih: `${JSON.stringify(data)}` }
-                    }}>
-                      <img style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
-                    </Link>
+                    }}> */}
+                      <img onClick={() => goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)} style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
+                    {/* </Link> */}
                   </div>
                 </Col>
                 <Col md="8">
-                  <h3 className="judulListBerita">
-                    <Link to={{
+                  <h3 className="judulListBerita" onClick={() => goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)}>
+                    {/* <Link to={{
                       pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
                       state: { id: `${JSON.stringify(data._id)}` }
-                    }}>
+                    }}> */}
                       {data.judul}
-                    </Link>
+                    {/* </Link> */}
                   </h3>
                   <div className="dateListBerita">
                     <Icon className="iconListBerita" icon={calendar} size={13}/>
