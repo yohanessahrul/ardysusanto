@@ -1,9 +1,13 @@
 require('dotenv').config();
 
+
 const express = require('express');
 const port = process.env.PORT || 5000;
 const path = require('path');
 const fs = require('fs');
+const httpServer = require('http-server');
+
+require('isomorphic-fetch');
 
 const app = express();
 
@@ -52,13 +56,38 @@ app.get('/berita/:id/:judul', function(req, res) {
       if (err) {
         return console.log(err);
       }
-      data = data.replace(/\$OG_URL/g, 'http://kemodijakarta.com');
-      data = data.replace(/\$OG_TYPE/g, 'article');
-      data = data.replace(/\$OG_TITLE/g, 'Details');
-      data = data.replace(/\$OG_IMAGE/g, "https://storage.googleapis.com/ardy-upload/1547022757476Pembuat%20Hoax%207%20Kontainer.jpg")
-      data = data.replace(/\$OG_DESCRIPTION/g, "Ini adalah detail berita");
-      data = data.replace(/\$OG_FB_APP_ID/g, '2335498293131821')
-      res.send(data);
+
+      console.log('TEst ', req.url)
+      const url = req.url
+      const id = url.split('/')[2]
+      const judul = url.split('/')[3]
+
+      console.log('REQUEST ', id, judul)
+
+      fetch(`http://35.185.181.27:3000/api/berita/readbyid/${id}`)
+      .then(function(response) {
+        if (!response) {
+          return console.log('ERROR ')
+        }
+        return response.json()
+      })
+      .then(function (response) {
+         console.log('NAH => ',response.data)
+        const { judul, isi, img } = response.data
+        data = data.replace(/\$OG_URL/g, 'http://ardysusanto.com');
+        data = data.replace(/\$OG_TYPE/g, 'article');
+        data = data.replace(/\$OG_TITLE/g, judul);
+        data = data.replace(/\$OG_IMAGE/g, img)
+        data = data.replace(/\$OG_DESCRIPTION/g, `Ini adalah detail berita dari berita yang berjudul ${judul}`);
+        data = data.replace('2335498293131821', '2335498293131821')
+        res.send(data);
+        })
+        .catch(function (error) {
+          return console.log(error)
+        })
+
+      // console.log('MAntap ===>', dataFetch)
+
     })
 });
 
