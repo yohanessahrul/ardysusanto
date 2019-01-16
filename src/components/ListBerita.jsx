@@ -1,3 +1,4 @@
+import history from '../history';
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-icons-kit';
@@ -51,12 +52,12 @@ class ListBerita extends Component {
                       pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
                       state: { beritaterpilih: `${JSON.stringify(data)}` }
                     }}> */}
-                      <img onClick={() => goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)} style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
+                      <img onClick={this.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)} style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
                     {/* </Link> */}
                   </div>
                 </Col>
                 <Col md="8">
-                  <h3 className="judulListBerita" onClick={() => goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)}>
+                  <h3 className="judulListBerita" onClick={this.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)}>
                     {/* <Link to={{
                       pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
                       state: { id: `${JSON.stringify(data._id)}` }
