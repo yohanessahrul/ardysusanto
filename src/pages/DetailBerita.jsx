@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link} from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
-import {calendar,eye} from 'react-icons-kit/fa';
+import { calendar, eye } from 'react-icons-kit/fa';
 
 import Header from '../components/Header';
 import BeritaTerbaru from '../components/BeritaTerbaru';
+import InlineShareButton from '../components/InlineShareButton';
 
-import { dateFormatClean } from '../helper/function'
+import { dateFormatClean, getCleanIdFromUrl2 } from '../helper/function'
 
 import { connect } from 'react-redux';
 import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
@@ -27,11 +28,8 @@ class DetailBerita extends Component {
     this.goTo = this.goTo.bind(this);
   }
   componentDidMount () {
-    const pecah = window.location.pathname.split('/')[2];
-    let cleanId = pecah.replace(/[^a-zA-Z0-9 ]/g, "");
-
-    this.props.readNewsByIdAction(cleanId) // api get current news for read
-    this.props.addViewerAction(cleanId); // api increment view
+    this.props.readNewsByIdAction(getCleanIdFromUrl2(window.location.pathname)) // api get current news for read
+    this.props.addViewerAction(getCleanIdFromUrl2(window.location.pathname)); // api increment view
 
   }
   componentWillReceiveProps (nextProps) {
@@ -45,12 +43,12 @@ class DetailBerita extends Component {
     })
 
     // set SEO meta tag
-    document.title = dataCurrentBerita.judul;
-    document.querySelector('meta[name="description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    document.querySelector('meta[itemprop="image"]').setAttribute("content", dataCurrentBerita.img);
-    document.querySelector('meta[property="og:title"]').setAttribute("content", dataCurrentBerita.judul);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    document.querySelector('meta[property="og:image"]').setAttribute("content", dataCurrentBerita.img);
+    // document.title = dataCurrentBerita.judul;
+    // document.querySelector('meta[name="description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    // document.querySelector('meta[itemprop="image"]').setAttribute("content", dataCurrentBerita.img);
+    // document.querySelector('meta[property="og:title"]').setAttribute("content", dataCurrentBerita.judul);
+    // document.querySelector('meta[property="og:description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
+    // document.querySelector('meta[property="og:image"]').setAttribute("content", dataCurrentBerita.img);
   }
   goTo (id, judul) {
     console.log('Masuk ke go to ID =>', this.props.location.pathname)
@@ -75,7 +73,7 @@ class DetailBerita extends Component {
                 <Breadcrumb>
                   <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
                   <BreadcrumbItem><Link to="/berita">Berita</Link></BreadcrumbItem>
-                  <BreadcrumbItem active>{datas.judul}</BreadcrumbItem>
+                  <BreadcrumbItem active>Detail Berita</BreadcrumbItem>
                 </Breadcrumb>
               </Col>
             </Row>
@@ -98,6 +96,8 @@ class DetailBerita extends Component {
                   </div>
                   <div className="clear"></div>
                 </div>
+                <InlineShareButton/>
+                <br/>
                 <div className="wadahImageDetail">
                   <img style={{ width: '100%' }} src={datas.img} alt={datas.img}/>
                 </div>

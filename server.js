@@ -13,6 +13,9 @@ app.get('/', function(req, res) {
       if (err) {
         return console.log(err);
       }
+      data = data.replace(/\$OG_TITLE/g, 'Home Page');
+      data = data.replace(/\$OG_DESCRIPTION/g, "Home page description");
+      result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png');
       res.send(data)
     })
 });
@@ -21,10 +24,13 @@ app.get('/profil', function(req, res) {
     console.log('masuk Profile')
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
-        if (err) {
-          return console.log(err);
-        }
-        res.send(data);
+      if (err) {
+        return console.log(err);
+      }
+      data = data.replace(/\$OG_TITLE/g, 'Profile Page');
+      data = data.replace(/\$OG_DESCRIPTION/g, "Home page description");
+      result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png');
+      res.send(data);
     })
 });
 
@@ -32,10 +38,10 @@ app.get('/berita', function(req, res) {
     console.log('masuk berita')
     const filePath = path.resolve(__dirname, './build', 'index.html');
     fs.readFile(filePath, 'utf8', function(err, data) {
-        if (err) {
-          return console.log(err);
-        }
-        res.send(data);
+      if (err) {
+        return console.log(err);
+      }
+      res.send(data);
     })
 });
 
@@ -46,6 +52,12 @@ app.get('/berita/:id/:judul', function(req, res) {
       if (err) {
         return console.log(err);
       }
+      data = data.replace(/\$OG_URL/g, 'http://kemodijakarta.com');
+      data = data.replace(/\$OG_TYPE/g, 'article');
+      data = data.replace(/\$OG_TITLE/g, 'Details');
+      data = data.replace(/\$OG_IMAGE/g, "https://storage.googleapis.com/ardy-upload/1547022757476Pembuat%20Hoax%207%20Kontainer.jpg")
+      data = data.replace(/\$OG_DESCRIPTION/g, "Ini adalah detail berita");
+      data = data.replace(/\$OG_FB_APP_ID/g, '2335498293131821')
       res.send(data);
     })
 });

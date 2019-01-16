@@ -50,7 +50,6 @@ class FormTambahUser extends Component {
     return (
       <div style={{ padding: '50px 5%' }}>
         <h1>Form Tambah User</h1>
-        
         <Form onSubmit={this.onSubmit}>
           <FormGroup>
             <Label>Username</Label>

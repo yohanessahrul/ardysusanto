@@ -2,11 +2,13 @@ import history from '../history';
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 
-import { judulConvertToUrlParameter } from '../helper/function';
+import { judulConvertToUrlParameter, getCleanIdFromUrl2 } from '../helper/function';
 
 import { connect } from 'react-redux';
 import { getNewNews, readNewsByIdAction } from '../action/action_berita';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
+
+import { Link } from 'react-router-dom';
 
 class BeritaTerkait extends Component {
   constructor (props) {
@@ -28,9 +30,7 @@ class BeritaTerkait extends Component {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 
-    const pecah = window.location.pathname.split('/')[2];
-    let cleanId = pecah.replace(/[^a-zA-Z0-9 ]/g, "");
-    this.props.getNewNews(cleanId)
+    this.props.getNewNews(getCleanIdFromUrl2(window.location.pathname))
   }
 
   componentWillReceiveProps (nextProps) {
@@ -52,8 +52,12 @@ class BeritaTerkait extends Component {
       const loopListBeritaTerbaru = dataBeritaTerbaru.map(function(data) {
         return (
           <Col md="4" key={data._id}>
-            <img className="imageBeritaTerbaru" src={data.img} onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) } alt={data.img}/>
-            <h6 className="judulBeritaTerkait" onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>{data.judul}</h6>
+            <Link to={`/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`} onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>
+              <img className="imageBeritaTerbaru" src={data.img} alt={data.img}/>
+            </Link>
+            <Link to={`/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`} onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>
+              <h6 className="judulBeritaTerkait" onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>{data.judul}</h6>
+            </Link>
           </Col>
         )
       })

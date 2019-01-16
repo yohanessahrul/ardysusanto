@@ -8,6 +8,7 @@ import Profil from './pages/Profil';
 import Berita from './pages/Berita';
 import Media from './pages/Media';
 import DetailBerita from './pages/DetailBerita';
+
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';

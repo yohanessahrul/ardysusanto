@@ -20,11 +20,16 @@ export function dateFormatCleanAdmin (string) {
 }
 
 export function dateFormatClean (string) {
-    const date = string.split('T')
-    const splitDate = date[0].split('-')
-    const newFormatDate = `${splitDate[2]} ${convertMonth(splitDate[1])} ${splitDate[0]}`
-    return newFormatDate + ' - ' + date[1].split('.')[0]
-  }
+  const date = string.split('T')
+  const splitDate = date[0].split('-')
+  const newFormatDate = `${splitDate[2]} ${convertMonth(splitDate[1])} ${splitDate[0]}`
+  return newFormatDate + ' - ' + date[1].split('.')[0]
+}
+
+export function getCleanIdFromUrl2 (string) {
+  const pecah = string.split('/')[2]
+  return pecah
+}
 
 //======================================================================
 //======================================================================
