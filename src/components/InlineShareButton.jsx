@@ -30,12 +30,12 @@ class InlineShareButton extends Component {
             size: 40,             // the size of each button (INTEGER)
  
             // OPTIONAL PARAMETERS
-            url: window.location.href, // (defaults to current url)
-            image: img,  // (defaults to og:image or twitter:image)
-            description: 'custom text',       // (defaults to og:description or twitter:description)
-            title: judul,            // (defaults to og:title or twitter:title)
-            message: isi,     // (only for email sharing)
-            subject: `[ARDYSUSANTO.COM] - ${judul}`,  // (only for email sharing)
+            // url: window.location.href, // (defaults to current url)
+            // image: img,  // (defaults to og:image or twitter:image)
+            // description: 'custom text',       // (defaults to og:description or twitter:description)
+            // title: judul,            // (defaults to og:title or twitter:title)
+            // message: isi,     // (only for email sharing)
+            // subject: `[ARDYSUSANTO.COM] - ${judul}`,  // (only for email sharing)
             // username: 'custom twitter handle' // (only for twitter sharing)
           }}
         />

@@ -20,7 +20,10 @@ app.get('/', function(req, res) {
       data = data.replace(/\$OG_URL/g, 'http://ardysusanto.com');
       data = data.replace(/\$OG_TYPE/g, 'website');
       data = data.replace(/\$OG_TITLE/g, 'Ardysusanto.com - Bersama membangun ekonomi kerakyatan');
-      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg')
+      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg');
+      data = data.replace(/\$OG_IMAGE_TYPE/g, 'image/jpeg');
+      data = data.replace(/\$OG_IMAGE_WIDTH/g, '400');
+      data = data.replace(/\$OG_IMAGE_HEIGHT/g, '300');
       data = data.replace(/\$OG_DESCRIPTION/g, 'Ardy Susanto merupakan sosok muda dari Partai Kebangkitan Bangsa yang akan maju untuk menjadi Calon DPR RI Dapil Banten 3');
       data = data.replace('2335498293131821', '2335498293131821')
       res.send(data);
@@ -37,7 +40,10 @@ app.get('/profil', function(req, res) {
       data = data.replace(/\$OG_URL/g, 'http://ardysusanto.com');
       data = data.replace(/\$OG_TYPE/g, 'website');
       data = data.replace(/\$OG_TITLE/g, 'Ardysusanto.com - Bersama membangun ekonomi kerakyatan');
-      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg')
+      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg');
+      data = data.replace(/\$OG_IMAGE_TYPE/g, 'image/jpeg');
+      data = data.replace(/\$OG_IMAGE_WIDTH/g, '400');
+      data = data.replace(/\$OG_IMAGE_HEIGHT/g, '300');
       data = data.replace(/\$OG_DESCRIPTION/g, 'Ardy Susanto merupakan sosok muda dari Partai Kebangkitan Bangsa yang akan maju untuk menjadi Calon DPR RI Dapil Banten 3');
       data = data.replace('2335498293131821', '2335498293131821')
       res.send(data);
@@ -54,7 +60,10 @@ app.get('/berita', function(req, res) {
       data = data.replace(/\$OG_URL/g, 'http://ardysusanto.com');
       data = data.replace(/\$OG_TYPE/g, 'website');
       data = data.replace(/\$OG_TITLE/g, 'Ardysusanto.com - Bersama membangun ekonomi kerakyatan');
-      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg')
+      data = data.replace(/\$OG_IMAGE/g, 'https://storage.googleapis.com/ardy-upload/1546909842526ardy-susanto%202.jpg');
+      data = data.replace(/\$OG_IMAGE_TYPE/g, 'image/jpeg');
+      data = data.replace(/\$OG_IMAGE_WIDTH/g, '400');
+      data = data.replace(/\$OG_IMAGE_HEIGHT/g, '300');
       data = data.replace(/\$OG_DESCRIPTION/g, 'Ardy Susanto merupakan sosok muda dari Partai Kebangkitan Bangsa yang akan maju untuk menjadi Calon DPR RI Dapil Banten 3');
       data = data.replace('2335498293131821', '2335498293131821')
       res.send(data);
@@ -86,10 +95,13 @@ app.get('/berita/:id/:judul', function(req, res) {
       .then(function (response) {
         console.log('NAH => ',response.data)
         const { judul, isi, img } = response.data
-        data = data.replace(/\$OG_URL/g, `http://ardysusanto.com/berita/${id}/${judul}`);
+        data = data.replace(/\$http://ardysusanto.com/g, `http://ardysusanto.com/berita/${id}/${judul}`);
         data = data.replace(/\$OG_TYPE/g, 'article');
         data = data.replace(/\$OG_TITLE/g, judul);
         data = data.replace(/\$OG_IMAGE/g, img);
+        data = data.replace(/\$OG_IMAGE_TYPE/g, 'image/jpeg');
+        data = data.replace(/\$OG_IMAGE_WIDTH/g, '400');
+        data = data.replace(/\$OG_IMAGE_HEIGHT/g, '300');
         data = data.replace(/\$OG_DESCRIPTION/g, isi.replace(/(<([^>]+)>)/ig,"").substring(0, 80));
         data = data.replace('2335498293131821', '2335498293131821')
         res.send(data);
