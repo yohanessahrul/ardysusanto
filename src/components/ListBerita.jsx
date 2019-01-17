@@ -31,14 +31,12 @@ class ListBerita extends Component {
   }
 
   goToLink (link) {
-    console.log('Goto Link => ', link)
-    // location.reload(link)
     history.push(link)
     window.location.reload(true)
   }
 
   render() {
-    const listBerita = () => {
+    const listBerita = (thisDeep) => {
       const dataBerita = this.state.dataBerita
 
       const loopList = dataBerita.map(function (data, i) {
@@ -48,22 +46,12 @@ class ListBerita extends Component {
               <Row>
                 <Col md="4">
                   <div style={{ position: 'relative', width: '100%', height: '200px', background: '#e3e3e3', overflow: 'hidden' }}>
-                    {/* <Link to={{
-                      pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
-                      state: { beritaterpilih: `${JSON.stringify(data)}` }
-                    }}> */}
-                      <img onClick={this.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)} style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
-                    {/* </Link> */}
+                    <img className="pointer" onClick={() => thisDeep.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)} style={{ position: 'absolute', width: '140%', display: 'inline-table', left: '-20%' }} src={data.img} alt="img"/>
                   </div>
                 </Col>
                 <Col md="8">
-                  <h3 className="judulListBerita" onClick={this.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)}>
-                    {/* <Link to={{
-                      pathname: `/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`,
-                      state: { id: `${JSON.stringify(data._id)}` }
-                    }}> */}
-                      {data.judul}
-                    {/* </Link> */}
+                  <h3 className="judulListBerita" onClick={() => thisDeep.goToLink(`/berita/${(data._id)}/${judulConvertToUrlParameter(data.judul)}`)}>
+                    {data.judul}
                   </h3>
                   <div className="dateListBerita">
                     <Icon className="iconListBerita" icon={calendar} size={13}/>
@@ -83,7 +71,7 @@ class ListBerita extends Component {
     } else {
       return (
         <div>
-          {listBerita()}
+          {listBerita(this)}
         </div>
       );
     }

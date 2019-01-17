@@ -293,6 +293,10 @@ background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, F
   line-height: 1.3em;
   margin-top: 10px;
 }
+.judulListBerita:hover, .pointer:hover {
+  color: #0b460a;
+  cursor: pointer;
+}
 
 .wadahImageDetail {
   width: 100%;
