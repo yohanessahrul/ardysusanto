@@ -96,7 +96,7 @@ class DetailBerita extends Component {
                   </div>
                   <div className="clear"></div>
                 </div>
-                <InlineShareButton/>
+                <InlineShareButton dataShare={this.state.beritaTerpilih}/>
                 <br/>
                 <div className="wadahImageDetail">
                   <img style={{ width: '100%' }} src={datas.img} alt={datas.img}/>

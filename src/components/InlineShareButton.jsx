@@ -3,9 +3,10 @@ import { InlineShareButtons } from 'sharethis-reactjs';
 
 class InlineShareButton extends Component {
   componentDidMount () {
-    console.log('PROPS inline Share ==> ', this.props)
+    console.log('PROPS inline Share ==> ', this.props.dataShare)
   }
   render() {
+    const { img, isi, judul } = this.props.dataShare
     return (
       <div>
         <InlineShareButtons
@@ -29,12 +30,12 @@ class InlineShareButton extends Component {
             size: 40,             // the size of each button (INTEGER)
  
             // OPTIONAL PARAMETERS
-            // url: window.location.href, // (defaults to current url)
-            // image: 'https://bit.ly/2CMhCMC',  // (defaults to og:image or twitter:image)
-            // description: 'custom text',       // (defaults to og:description or twitter:description)
-            // title: 'custom title',            // (defaults to og:title or twitter:title)
-            // message: 'custom email text',     // (only for email sharing)
-            // subject: 'custom email subject',  // (only for email sharing)
+            url: window.location.href, // (defaults to current url)
+            image: img,  // (defaults to og:image or twitter:image)
+            description: 'custom text',       // (defaults to og:description or twitter:description)
+            title: judul,            // (defaults to og:title or twitter:title)
+            message: isi,     // (only for email sharing)
+            subject: `[ARDYSUSANTO.COM] - ${judul}`,  // (only for email sharing)
             // username: 'custom twitter handle' // (only for twitter sharing)
           }}
         />
