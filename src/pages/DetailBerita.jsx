@@ -15,7 +15,6 @@ import { connect } from 'react-redux';
 import { readNewsByIdAction, addViewerAction } from '../action/action_berita';
 import { bindActionCreators } from 'redux';
 
-// import DocumentMeta from 'react-document-meta';
 
 class DetailBerita extends Component {
   constructor (props) {
@@ -33,7 +32,6 @@ class DetailBerita extends Component {
 
   }
   componentWillReceiveProps (nextProps) {
-    // console.log('NEXTPROPS', nextProps)
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     let dataCurrentBerita = nextProps.state.reducerBerita.readNews;
@@ -41,14 +39,6 @@ class DetailBerita extends Component {
       isLoading: true,
       beritaTerpilih: dataCurrentBerita,
     })
-
-    // set SEO meta tag
-    // document.title = dataCurrentBerita.judul;
-    // document.querySelector('meta[name="description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    // document.querySelector('meta[itemprop="image"]').setAttribute("content", dataCurrentBerita.img);
-    // document.querySelector('meta[property="og:title"]').setAttribute("content", dataCurrentBerita.judul);
-    // document.querySelector('meta[property="og:description"]').setAttribute("content", dataCurrentBerita.isi.replace(/(<([^>]+)>)/ig,"").substring(18,150) + '..');
-    // document.querySelector('meta[property="og:image"]').setAttribute("content", dataCurrentBerita.img);
   }
   goTo (id, judul) {
     console.log('Masuk ke go to ID =>', this.props.location.pathname)
@@ -60,12 +50,8 @@ class DetailBerita extends Component {
       )
     } else {
       const datas = this.state.beritaTerpilih;
-      const meta = {
-        title: 'Hahahaha',
-        description: 'Deskripsi hahaha'
-      }
       return (
-        <div {...meta}>
+        <div>
           <Header/>
           <Container>
             <Row>

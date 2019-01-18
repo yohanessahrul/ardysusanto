@@ -40,10 +40,11 @@ class BeritaTerkait extends Component {
     })
   }
 
-  goToLink (id, judul) {
-    console.log('menuju ke link')
+  goToLink (id, link) {
+    history.push(link)
     this.props.readNewsByIdAction(id)
     this.props.getNewNews(id)
+    window.location.reload(true)
   }
 
   render() {
@@ -52,10 +53,10 @@ class BeritaTerkait extends Component {
       const loopListBeritaTerbaru = dataBeritaTerbaru.map(function(data) {
         return (
           <Col md="4" key={data._id}>
-            <Link to={`/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`} onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>
+            <Link to='#' onClick={() => thisForComponent.goToLink(data._id, `/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`) }>
               <img className="imageBeritaTerbaru" src={data.img} alt={data.img}/>
             </Link>
-            <Link to={`/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`} onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>
+            <Link to='#' onClick={() => thisForComponent.goToLink(data._id, `/berita/${data._id}/${judulConvertToUrlParameter(data.judul)}`) }>
               <h6 className="judulBeritaTerkait" onClick={() => thisForComponent.goToLink(data._id, judulConvertToUrlParameter(data.judul)) }>{data.judul}</h6>
             </Link>
           </Col>
